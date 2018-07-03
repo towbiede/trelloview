@@ -1,22 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1 id="headline">
-    Welcome to {{ title }}!
-  </h1>
-  <h3 id="headline_description">
-    A fantastic simple Angular-Application <br> made by two crazy media students
-  </h3>
-  <br>
-  <iframe src="https://giphy.com/embed/l4q8brTp40bXYUtBS" width="480" height="338" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
-</div>
-<div id="sorry_box" class="center">
-  <p>
-      Sorry that you can currently just see a funny gif, but we're hardly working on this project
-      to make it the most awesome shit students ever made in this course!
-  </p>
-  <h4>
-    See you soon!
-  </h4>
-</div>
+<!-- Navigation bar of our root app component -->
+<ul>
+  <li><a routerLink="">Dashboard</a></li>
+  <li><a routerLink="details">Details</a></li>
+  <li><a routerLink="visual">Visual</a></li>
+</ul>
+
+<!-- Nesting the different components into our root -->
+<app-dashboard></app-dashboard>
+<app-details></app-details>
+<app-visual></app-visual>
 
 
+<router-outlet></router-outlet>
