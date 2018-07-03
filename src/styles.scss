@@ -6,16 +6,12 @@ body {
   font-family: 'Raleway', 'Arial';
   color:#fff;
 }
-ul {
-  list-style-type:none;
+nav {
   margin:0 0 2em 0;
   padding:0;
 }
-ul li {
-  display:inline;
+nav a {
   margin-right: 30px;
-}
-ul li a {
   font-size: 1.5em;
 }
 a {
