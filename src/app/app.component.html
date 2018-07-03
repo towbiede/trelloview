@@ -5,10 +5,16 @@
   <li><a routerLink="visual">Visual</a></li>
 </ul>
 
-<!-- Nesting the different components into our root -->
+<!--
+Usually we're nesting the different components into our root like this:
+
 <app-dashboard></app-dashboard>
 <app-details></app-details>
 <app-visual></app-visual>
+
+But for now we don't need this anymore because we'er using the routing module
+to switch between our different components with the navigation bar on our site.
+-->
 
 
 <router-outlet></router-outlet>

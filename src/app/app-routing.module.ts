@@ -12,7 +12,7 @@ const routes: Routes = [
   {
     path: 'details',
     component: DetailsComponent
-  }
+  },
   {
     path: 'visual',
     component: VisualComponent
@@ -23,7 +23,7 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes)
   ],
-  declarations: []
+  // declarations: []
   exports: [ RouterModule ]
 })
 export class AppRoutingModule { }
