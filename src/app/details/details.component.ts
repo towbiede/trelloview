@@ -8,11 +8,10 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor( private http = HttpClient) { }
-
-
+  constructor(private http: HttpClient) {}
 
   ngOnInit() {
+
   }
 
 }
