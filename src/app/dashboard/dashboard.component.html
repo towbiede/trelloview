@@ -1,24 +1,24 @@
 <div class="container color-dark">
   <div class="col">
-    <p>My active Cards on Trello</p>
+    <p>My active Boards on Trello</p>
   </div>
   <div class="col">
-    <p>Add a new Card</p>
+    <p>Add a new Board</p>
   </div>
 </div>
 <div class="container color-light">
   <div class="col">
     <ul class="board-list-container">
       <li  *ngFor="let board of boards">
-        {{ board }}
+        {{ board.name }}
       </li>
     </ul>
   </div>
   <div class="col">
-    <p class="sm">You can use this form to add a new Trello-Card. What task would you like to add to your board?</p>
+    <p class="sm">You can use this form to add a new Trello-Board. What kind of board would you like to add?</p>
 
     <form>
-      <input type="text" class="txt" name="card" placeholder="Name of your card..">
+      <input type="text" class="txt" name="card" placeholder="Name of your board..">
       <input type="submit" class="btn" value="Add Card">
     </form>
   </div>

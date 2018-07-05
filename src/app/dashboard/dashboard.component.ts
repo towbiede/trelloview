@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Board } from '../board';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,14 +15,14 @@ export class DashboardComponent implements OnInit {
   private apiURL = 'https://api.trello.com/1/members/me/boards?key=' + this.apiKey + '&token=' + this.apiToken;
 
   data: any = {};
+  boards: any;
+  cards: any;
 
   constructor(private http: HttpClient) {}
 
-  boards = ['einboard', 'zweiboard', 'dreiboard'];
-
   getBoards() {
     return this.http.get(this.apiURL).subscribe(data => {
-      console.log(data);
+      this.boards = data;
     });
   }
 
