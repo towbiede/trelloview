@@ -26,17 +26,16 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  getCardsbyBoardId(boardId: string) {
+  getCardsByBoardId(boardId: string) {
     this.bId = boardId;
     const getCardsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/cards?key=' + this.apiKey + '&token=' + this.apiToken;
     return this.http.get(getCardsUrl).subscribe(data => {
-      console.log(data);
+      this.cards = data;
     });
   }
 
   ngOnInit() {
     this.getBoards();
-    this.getCardsbyBoardId('5919fee7889a432f3f61c71b');
   }
 
 }
