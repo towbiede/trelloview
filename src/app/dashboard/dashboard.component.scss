@@ -27,9 +27,16 @@ input.btn {
   margin-bottom:1em;
   cursor:pointer;
 }
-.card-list-container {
+.board-list-container {
+  list-style: none;
+}
+.board-list-container li {
   background:#3FA0E1;
   padding:.5em;
-  font-weight:bold;
+  margin-top: 10px;
   cursor:pointer;
+}
+
+.board-list-container li:hover {
+  background: #78bcea;
 }

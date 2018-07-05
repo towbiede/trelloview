@@ -17,6 +17,8 @@ export class DashboardComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
 
+  boards = ['einboard', 'zweiboard', 'dreiboard'];
+
   getBoards() {
     return this.http.get(this.apiURL).subscribe(data => {
       console.log(data);
