@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TrelloAuthService } from '../TrelloAuth/trello-auth/trello-auth.service';
+import { TrelloService } from '../TrelloAuth/trello-api/trello.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -17,7 +19,7 @@ export class DashboardComponent implements OnInit {
   boards: any;
   cards: any;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {}
 
   getBoards() {
     return this.http.get(this.apiURL).subscribe(data => {
@@ -33,8 +35,12 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  ngOnInit() {
+  async ngOnInit() {
     this.getBoards();
+  }
+
+  logout() {
+    this.trelloAuthService.logout();
   }
 
 }

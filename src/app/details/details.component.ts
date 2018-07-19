@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {TrelloService} from '../TrelloAuth/trello-api/trello.service';
+import {TrelloAuthService} from '../TrelloAuth/trello-auth/trello-auth.service';
 
 @Component({
   selector: 'app-details',
@@ -8,10 +10,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {}
 
-  ngOnInit() {
+  async ngOnInit() {
 
+  }
+
+  logout() {
+    this.trelloAuthService.logout();
   }
 
 }
