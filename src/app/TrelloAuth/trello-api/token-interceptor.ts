@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {HttpEvent, HttpHandler, HttpRequest} from '@angular/common/http';
-import {Observable} from 'rxjs/Observable';
-import {TrelloAuthService} from '../trello-auth/trello-auth.service';
-import {_throw} from 'rxjs/observable/throw';
+import { Injectable } from '@angular/core';
+import { HttpEvent, HttpHandler, HttpRequest} from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { TrelloAuthService } from '../trello-auth/trello-auth.service';
+import { _throw } from 'rxjs/observable/throw';
 
 /**
  * This interceptor adds your api key and the users trello auth token to every http request.

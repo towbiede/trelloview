@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TokenInterceptor } from './token-interceptor';
-import { TrelloService } from './';
+import { TrelloService } from './trello.service';
 
 @NgModule({
   imports: [

@@ -1,5 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { TrelloService } from './';
+import { TrelloService } from './trello.service';
 
 describe('TrelloService', () => {
   beforeEach(() => {
