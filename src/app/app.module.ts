@@ -8,6 +8,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DetailsComponent } from './details/details.component';
 import { VisualComponent } from './visual/visual.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { TrelloAuthModule } from './TrelloAuth/trello-auth/trello-auth.module';
+import { TrelloApiModule } from './TrelloAuth/trello-api/trello-api.module';
+import { SetTokenModule } from './TrelloAuth/set-token/set-token.module';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { AppRoutingModule } from './/app-routing.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    TrelloAuthModule,
+    TrelloApiModule,
+    SetTokenModule
   ],
   providers: [],
   bootstrap: [AppComponent]
