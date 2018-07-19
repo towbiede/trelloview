@@ -1,16 +1,15 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Trello} from "../../trello";
+import { HttpClient } from '@angular/common/http';
+import { Trello } from '../../../';
 import User = Trello.User;
 
-@Injectable( )
+@Injectable()
 export class TrelloService {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  async getMe() : Promise<User>{
+  async getMe(): Promise<User> {
     return this.httpClient.get<User>('https://api.trello.com/1/members/me').toPromise();
   }
-
 
 }

@@ -1,6 +1,5 @@
 import { TestBed, inject } from '@angular/core/testing';
-
-import { TrelloAuthService } from './trello-auth.service';
+import { TrelloAuthService } from './';
 
 describe('TrelloAuthService', () => {
   beforeEach(() => {

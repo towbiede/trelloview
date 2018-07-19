@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { TrelloAuthService } from '../TrelloAuth/trello-auth/trello-auth.service';
-import { TrelloService } from '../TrelloAuth/trello-api/trello.service';
+import { TrelloAuthService } from '../TrelloAuth/trello-auth';
+import { TrelloService } from '../TrelloAuth/trello-api';
 
 @Component({
   selector: 'app-dashboard',
@@ -35,7 +35,7 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-  async ngOnInit() {
+  ngOnInit() {
     this.getBoards();
   }
 

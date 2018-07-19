@@ -41,8 +41,7 @@ export namespace Trello {
     idBoardsPinned?: any;
   }
 
-  export interface Emoji {
-  }
+  export interface Emoji {}
 
   export interface BioData {
     emoji: Emoji;
