@@ -1,22 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DetailsComponent } from './details/details.component';
-import { VisualComponent} from './visual/visual.component';
+import {PrivateComponent} from './private/private.component';
+import {PublicComponent} from './public/public.component';
+import {PRIV_ROUTES} from './private/private.routes';
+
 
 const routes: Routes = [
-  {
-    path: '',
-    component: DashboardComponent
-  },
-  {
-    path: 'details',
-    component: DetailsComponent
-  },
-  {
-    path: 'visual',
-    component: VisualComponent
-  }
+  {path: 'private', component: PrivateComponent, children: PRIV_ROUTES},
+  {path: '', component: PublicComponent}
 ];
 
 @NgModule({

@@ -4,13 +4,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 
 import { AppComponent } from './app.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { DetailsComponent } from './details/details.component';
-import { VisualComponent } from './visual/visual.component';
+import { DashboardComponent } from './private/dashboard/dashboard.component';
+import { DetailsComponent } from './private/details/details.component';
+import { VisualComponent } from './private/visual/visual.component';
 import { AppRoutingModule } from './/app-routing.module';
-import { TrelloAuthModule } from './TrelloAuth/trello-auth/trello-auth.module';
-import { TrelloApiModule } from './TrelloAuth/trello-api/trello-api.module';
-import { SetTokenModule } from './TrelloAuth/set-token/set-token.module';
+import { TrelloAuthModule } from './trello-service/trello-auth/trello-auth.module';
+import { TrelloApiModule } from './trello-service/trello-api/trello-api.module';
+import { SetTokenModule } from './trello-service/set-token/set-token.module';
+import { PrivateComponent } from './private/private.component';
+import { PublicComponent } from './public/public.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { SetTokenModule } from './TrelloAuth/set-token/set-token.module';
     AppComponent,
     DashboardComponent,
     DetailsComponent,
-    VisualComponent
+    VisualComponent,
+    PrivateComponent,
+    PublicComponent
   ],
   imports: [
     BrowserModule,

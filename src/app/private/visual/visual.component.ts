@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {TrelloService} from '../TrelloAuth/trello-api/trello.service';
+import {TrelloService} from '../../trello-service/trello-api/trello.service';
 import {HttpClient} from '@angular/common/http';
-import {TrelloAuthService} from '../TrelloAuth/trello-auth/trello-auth.service';
+import {TrelloAuthService} from '../../trello-service/trello-auth/trello-auth.service';
 
 @Component({
   selector: 'app-visual',

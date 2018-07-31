@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { TRELLO_TOKEN_KEY } from './trello-token-key';
+import { TRELLO_STORAGE_KEY } from './trello-token-key';
 
 
 @Injectable( )
@@ -12,19 +12,15 @@ export class TrelloAuthService {
   public apiKey: string;
 
   constructor(private  router: Router) {
-    this.token = localStorage.getItem(TRELLO_TOKEN_KEY);
+    this.token = localStorage.getItem(TRELLO_STORAGE_KEY);
   }
-
-
-
-
 
   getToken(): string | undefined {
-    return localStorage.getItem(TRELLO_TOKEN_KEY);
+    return localStorage.getItem(TRELLO_STORAGE_KEY);
   }
 
-setToken(token: string): void {
-    return localStorage.setItem(TRELLO_TOKEN_KEY, token);
+  setToken(token: string): void {
+    return localStorage.setItem(TRELLO_STORAGE_KEY, token);
 }
   login() {
     window.location.href = this.assembleUrl();
