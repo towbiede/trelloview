@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { TrelloAuthService } from '../../trello-service/trello-auth/trello-auth.service';
 import { TrelloService } from '../../trello-service/trello-api/trello.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,9 +11,9 @@ import { TrelloService } from '../../trello-service/trello-api/trello.service';
 export class DashboardComponent implements OnInit {
 
   bId: string;
-  private apiKey = '4c96a328e7ea9b34311ac6dade4d0b8d';
-  private apiToken = '20b32bb9f9a12cb3d431232af241f628dbe5e661d340630928153984cc6b81ea';
-  private apiURL = 'https://api.trello.com/1/members/me/boards?key=' + this.apiKey + '&token=' + this.apiToken;
+  private apiKey: string;
+  private apiToken: string:
+  /**private apiURL = 'https://api.trello.com/1/members/me/boards?key=' + this.apiKey + '&token=' + this.apiToken;*/
 
   data: any = {};
   boards: any;

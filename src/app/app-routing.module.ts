@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import {PrivateComponent} from './private/private.component';
 import {PublicComponent} from './public/public.component';
 import {PRIV_ROUTES} from './private/private.routes';
+import {PrivateGuard} from './private/private.guard';
+import {PublicGuard} from './public/public.guard';
 
 
 const routes: Routes = [
-  {path: 'private', component: PrivateComponent, children: PRIV_ROUTES},
-  {path: '', component: PublicComponent}
+  {path: 'private', canActivate: [PrivateGuard], component: PrivateComponent, children: PRIV_ROUTES},
+  {path: '', canActivate: [PublicGuard], component: PublicComponent}
 ];
 
 @NgModule({

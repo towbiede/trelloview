@@ -7,7 +7,7 @@ import { TRELLO_STORAGE_KEY } from './trello-storage-key';
 export class TrelloAuthService {
 
   public token: string;
-  public apiKey: '9dc8960d3015fee5599a539e20a2d91d';
+  public apiKey = '9dc8960d3015fee5599a539e20a2d91d';
 
   constructor(private  router: Router) {
     this.token = localStorage.getItem(TRELLO_STORAGE_KEY);
@@ -19,7 +19,12 @@ export class TrelloAuthService {
 
   setToken(token: string): void {
     return localStorage.setItem(TRELLO_STORAGE_KEY, token);
-}
+  }
+
+  deleteToken() {
+    localStorage.removeItem(TRELLO_STORAGE_KEY);
+  }
+
   login() {
     window.location.href = this.assembleUrl();
   }
@@ -27,6 +32,7 @@ export class TrelloAuthService {
 
   assembleUrl(): string {
     const returnUrl = encodeURI (  window.location.href + 'set-token');
+    console.log(this.apiKey);
     return 'https://trello.com/1/authorize?response_type=token&key=' + this.apiKey +
       '&return_url=' + returnUrl +
       '&callback_method=fragment&scope=read&expiration=never&name=Angular-TrelloView-App';
