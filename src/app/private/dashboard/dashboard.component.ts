@@ -12,7 +12,7 @@ export class DashboardComponent implements OnInit {
 
   bId: string;
   private apiKey: string;
-  private apiToken: string:
+  private apiToken: string;
   /**private apiURL = 'https://api.trello.com/1/members/me/boards?key=' + this.apiKey + '&token=' + this.apiToken;*/
 
   data: any = {};
