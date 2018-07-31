@@ -2,7 +2,8 @@ import {Injectable} from '@angular/core';
 import {CanActivate, Router} from '@angular/router';
 import {TrelloAuthService} from '../trello-service/trello-auth/trello-auth.service';
 
-@Injectable
+
+@Injectable()
 export class PrivateGuard implements CanActivate {
 
 

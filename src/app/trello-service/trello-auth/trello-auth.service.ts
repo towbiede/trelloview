@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { TRELLO_STORAGE_KEY } from './trello-token-key';
+import { TRELLO_STORAGE_KEY } from './trello-storage-key';
 
 
-@Injectable( )
+@Injectable()
 export class TrelloAuthService {
 
-
-
   public token: string;
-  public apiKey: string;
+  public apiKey: '9dc8960d3015fee5599a539e20a2d91d';
 
   constructor(private  router: Router) {
     this.token = localStorage.getItem(TRELLO_STORAGE_KEY);
@@ -29,15 +27,17 @@ export class TrelloAuthService {
 
   assembleUrl(): string {
     const returnUrl = encodeURI (  window.location.href + 'set-token');
-    return 'placeholder';
+    return 'https://trello.com/1/authorize?response_type=token&key=' + this.apiKey +
+      '&return_url=' + returnUrl +
+      '&callback_method=fragment&scope=read&expiration=never&name=Angular-TrelloView-App';
   }
 
   /**
    * Logout, guards are responsible to redirect
    */
 
-  async logout(): Promise<void>{
-    localStorage.removeItem(TRELLO_TOKEN_KEY);
+  async logout(): Promise<void> {
+    localStorage.removeItem(TRELLO_STORAGE_KEY);
     await this.router.navigate(['/']);
   }
 
