@@ -1,23 +1,15 @@
-<p>
-  Here you can get more information about your Trello-Cards:
-
-</p>
 
   <div class="container color-dark">
 
-    <div class="col">
-<p>My active Boards on Trello</p>
-</div>
 <div class="col">
-  <p>more Lists</p>
+  <h2> Here you can get more information about your Trello-Cards:</h2>
 </div>
-    <div class="col">
-      <p>more Cards</p>
-    </div>
+
 </div>
 <div class="container color-light">
   <div class="col">
     <ul class="board-list-container">
+      <p>Boards</p>
       <li  *ngFor="let board of boards" (click)="getListsByBoardId(board.id)">
         {{ board.name }}
       </li>
@@ -27,6 +19,7 @@
 
     <hr>
     <ul class="card-list-container">
+      <p>Lists</p>
       <li  *ngFor="let list of lists" (click) = "getCardsByBoardId(list.id)">
         {{ list.name}}
 
@@ -38,6 +31,7 @@
 
     <hr>
     <ul class="card-list-container">
+      <p>Cards</p>
       <li  *ngFor="let card of cards" (click) = "getChecklistByCardId(card.id)">
 
         {{ card.name}}
@@ -50,13 +44,33 @@
 
     <hr>
     <ul class="card-list-container">
-      <li  *ngFor="let checklist of checklists" >
+      <p>Checkliste</p>
+      <li  *ngFor="let checklist of checklists" (click) = "getCheckItemsByChecklistId(checklist.id)" >
 
         {{ checklist.name}}
       </li>
     </ul>
 
   </div>
+
+  <div class="col">
+
+    <hr>
+    <ul class="card-list-container">
+      <p>CheckItems</p>
+      <li  *ngFor="let checkItem of checkItems"  >
+
+        {{ checkItem.name}}
+      </li>
+    </ul>
+
+  </div>
+
+
+
+
+
+
 
 
 </div>

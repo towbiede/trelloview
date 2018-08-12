@@ -34,6 +34,7 @@ export class DetailsComponent implements OnInit {
   lists: any;
   members: any;
   checklists: any;
+  checkItems: any;
 
 
   getBoards() {
@@ -70,10 +71,19 @@ export class DetailsComponent implements OnInit {
   }
 
   getChecklistByCardId(cardId: string) {
-this.chId = cardId;
-    const getChecklistsUrl = 'https://api.trello.com/1/cards/' + this.chId + '/checklists'   ;
+this.cardId = cardId;
+    const getChecklistsUrl = 'https://api.trello.com/1/cards/' + this.cardId + '/checklists'   ;
     return this.http.get(getChecklistsUrl).subscribe(data => {
       this.checklists = data;
+
+    });
+  }
+
+  getCheckItemsByChecklistId(checklistId: string) {
+    this.chId = checklistId;
+    const getChecklistsUrl = 'https://api.trello.com/1/checklists/' + this.chId + '/checkItems'   ;
+    return this.http.get(getChecklistsUrl).subscribe(data => {
+      this.checkItems = data;
 
     });
   }
