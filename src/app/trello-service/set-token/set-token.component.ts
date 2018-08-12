@@ -1,5 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs/index';
+/** import { Subscription } from 'rxjs/index';
+ *
+ */
 import {TrelloAuthService} from '../trello-auth/trello-auth.service';
 import {Router, ActivatedRoute} from '@angular/router';
 
@@ -15,7 +17,7 @@ import {Router, ActivatedRoute} from '@angular/router';
 export class SetTokenComponent implements OnInit, OnDestroy {
 
   private token: string;
-  private fragSubscription: Subscription;
+  private fragSubscription ;
 
   constructor(private router: Router, private authService: TrelloAuthService, private aRoute: ActivatedRoute) {
   }
