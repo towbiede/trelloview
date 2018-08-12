@@ -10,17 +10,32 @@
   <div class="col">
     <ul class="board-list-container">
       <p>Boards</p>
-      <li  *ngFor="let board of boards" (click)="getListsByBoardId(board.id)">
-        {{ board.name }}
+      <li  *ngFor="let board of boards"  (click)="getListsByBoardId(board.id); getMembersByBoardId(board.id); ">
+
+        {{ board.name  }}
       </li>
+
     </ul>
   </div>
+
+  <div class="col">
+
+    <hr>
+    <ul class="card-list-container">
+      <p>Members</p>
+      <li  *ngFor="let member of members"  >
+        {{ member.fullName +" aka: " + member.username }}
+      </li>
+    </ul>
+
+  </div>
+
   <div class="col">
 
     <hr>
     <ul class="card-list-container">
       <p>Lists</p>
-      <li  *ngFor="let list of lists" (click) = "getCardsByBoardId(list.id)">
+      <li  *ngFor="let list of lists; let board of boards" (click) = "getCardsByBoardId(list.id); getLabelByBoardId(board.id)">
         {{ list.name}}
 
       </li>
@@ -32,9 +47,9 @@
     <hr>
     <ul class="card-list-container">
       <p>Cards</p>
-      <li  *ngFor="let card of cards" (click) = "getChecklistByCardId(card.id)">
+      <li  *ngFor="let card of cards; let label of labels" (click) = "getChecklistByCardId(card.id) ">
 
-        {{ card.name}}
+        {{ card.name + " " + label.color}}
       </li>
     </ul>
 
@@ -65,9 +80,6 @@
     </ul>
 
   </div>
-
-
-
 
 
 

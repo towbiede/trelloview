@@ -17,6 +17,7 @@ export class DetailsComponent implements OnInit {
   const user  = await this.trelloService.getMe();
   console.log('User:', user);
   this.getBoards();
+
   }
 
   /**
@@ -33,8 +34,10 @@ export class DetailsComponent implements OnInit {
   cards: any;
   lists: any;
   members: any;
+  labels: any;
   checklists: any;
   checkItems: any;
+
 
 
   getBoards() {
@@ -60,15 +63,14 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-
-  getMemberByCardId(cardId: string) {
-    this.cardId = cardId;
-    const getMembersUrl = 'https://api.trello.com/1/cards/' + this.cardId ;
-    return this.http.get(getMembersUrl).subscribe(data => {
-      this.members = data;
-
+  getLabelByBoardId(boardId: string) {
+    this.bId = boardId;
+    const getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/labels/?fields=color&limit=2';
+    return this.http.get(getListsUrl).subscribe(data => {
+      this.labels = data;
     });
   }
+
 
   getChecklistByCardId(cardId: string) {
 this.cardId = cardId;
@@ -88,6 +90,15 @@ this.cardId = cardId;
     });
   }
 
+
+  getMembersByBoardId(boardId: string) {
+    this.bId = boardId;
+    const getMembersUrl = 'https://api.trello.com/1/boards/' + this.bId + '/members' ;
+    return this.http.get(getMembersUrl).subscribe(data => {
+      this.members = data;
+
+    });
+  }
 
   /**
    * ENDE
