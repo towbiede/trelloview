@@ -28,7 +28,7 @@
     <hr>
     <ul class="card-list-container">
       <li  *ngFor="let list of lists" (click) = "getCardsByBoardId(list.id)">
-        {{ list.name }}
+        {{ list.name}}
 
       </li>
     </ul>
@@ -38,7 +38,7 @@
 
     <hr>
     <ul class="card-list-container">
-      <li  *ngFor="let card of cards" (click) = "getMemberByCardId(card.id)">
+      <li  *ngFor="let card of cards" (click) = "getChecklistByCardId(card.id)">
 
         {{ card.name}}
       </li>
@@ -50,12 +50,14 @@
 
     <hr>
     <ul class="card-list-container">
-      <li  *ngFor="let card of cards" (click) = "getMemberByCardId(card.id)">
+      <li  *ngFor="let checklist of checklists" >
 
-        {{ card.name}}
+        {{ checklist.name}}
       </li>
     </ul>
 
   </div>
+
+
 </div>
 

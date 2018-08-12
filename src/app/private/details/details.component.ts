@@ -25,11 +25,15 @@ export class DetailsComponent implements OnInit {
    */
 
   bId: string;
+  lId: string;
+  chId: string;
+  cardId: string;
   data: any = {};
   boards: any;
   cards: any;
   lists: any;
-  member: any;
+  members: any;
+  checklists: any;
 
 
   getBoards() {
@@ -38,9 +42,9 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  getCardsByBoardId(boardId: string) {
-    this.bId = boardId;
-    const getCardsUrl = 'https://api.trello.com/1/lists/' + this.bId + '/cards';
+  getCardsByBoardId(listId: string) {
+    this.lId = listId;
+    const getCardsUrl = 'https://api.trello.com/1/lists/' + this.lId + '/cards';
     return this.http.get(getCardsUrl).subscribe(data => {
       this.cards = data;
 
@@ -56,15 +60,23 @@ export class DetailsComponent implements OnInit {
   }
 
 
-  getMemberByCardId(boardId: string) {
-    this.bId = boardId;
-    const getMembersUrl = 'https://api.trello.com/1/lists/' + this.bId + '/cards?fields=id,name,badges,labels';
+  getMemberByCardId(cardId: string) {
+    this.cardId = cardId;
+    const getMembersUrl = 'https://api.trello.com/1/cards/' + this.cardId ;
     return this.http.get(getMembersUrl).subscribe(data => {
-      this.member = data;
+      this.members = data;
 
     });
   }
 
+  getChecklistByCardId(cardId: string) {
+this.chId = cardId;
+    const getChecklistsUrl = 'https://api.trello.com/1/cards/' + this.chId + '/checklists'   ;
+    return this.http.get(getChecklistsUrl).subscribe(data => {
+      this.checklists = data;
+
+    });
+  }
 
 
   /**
