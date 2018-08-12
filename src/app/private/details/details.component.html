@@ -1,3 +1,61 @@
 <p>
-  details works!
+  Here you can get more information about your Trello-Cards:
+
 </p>
+
+  <div class="container color-dark">
+
+    <div class="col">
+<p>My active Boards on Trello</p>
+</div>
+<div class="col">
+  <p>more Lists</p>
+</div>
+    <div class="col">
+      <p>more Cards</p>
+    </div>
+</div>
+<div class="container color-light">
+  <div class="col">
+    <ul class="board-list-container">
+      <li  *ngFor="let board of boards" (click)="getListsByBoardId(board.id)">
+        {{ board.name }}
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+
+    <hr>
+    <ul class="card-list-container">
+      <li  *ngFor="let list of lists" (click) = "getCardsByBoardId(list.id)">
+        {{ list.name }}
+
+      </li>
+    </ul>
+
+  </div>
+  <div class="col">
+
+    <hr>
+    <ul class="card-list-container">
+      <li  *ngFor="let card of cards" (click) = "getMemberByCardId(card.id)">
+
+        {{ card.name}}
+      </li>
+    </ul>
+
+  </div>
+
+  <div class="col">
+
+    <hr>
+    <ul class="card-list-container">
+      <li  *ngFor="let card of cards" (click) = "getMemberByCardId(card.id)">
+
+        {{ card.name}}
+      </li>
+    </ul>
+
+  </div>
+</div>
+
