@@ -19,9 +19,9 @@ export class VisualComponent implements OnInit {
    * This is just a TestChart
    */
 
-  // Doughnut
-  public doughnutChartLabels: string[] = ['Download Sales', 'In-Store Sales', 'Mail-Order Sales'];
-  public doughnutChartData: number[] = [350, 450, 100];
+  // DoughnutChart
+  public doughnutChartLabels: string[] = ['Cards', 'Lists', 'Boards'];
+  public doughnutChartData: number[] = [35, 45, 10];
   public doughnutChartType: string = 'doughnut';
 
   // events
