@@ -24,7 +24,7 @@ export class DashboardComponent implements OnInit {
   boards: any;
   cards: any;
   lists: any;
-  cBoard: any;
+  cBoard: any = null;
   selectedList: any;
 
   constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {}
@@ -55,6 +55,14 @@ export class DashboardComponent implements OnInit {
     return this.http.get('https://api.trello.com/1/boards/' + boardId).subscribe(data => {
       this.cBoard = data;
     });
+  }
+
+  getBoardName(): string {
+    if (this.cBoard === null) {
+      return '(No board selected)';
+    } else {
+      return this.cBoard.name;
+    }
   }
 
   setList(listId: string) {

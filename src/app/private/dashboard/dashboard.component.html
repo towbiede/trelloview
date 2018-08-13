@@ -19,7 +19,7 @@
                     Simply click on a Board on the left to show your current lists.</p>
     <hr>
 
-    <p class="sm"> Lists of {{cBoard}}</p>
+    <p class="sm"> Lists of <a>{{getBoardName()}}</a></p>
     <ul class="card-list-container">
       <li  *ngFor="let list of lists">
         <input type="radio" name="option" id="{{list.id}}" value="{{list.name}}" (click)="setList(list.id)">
