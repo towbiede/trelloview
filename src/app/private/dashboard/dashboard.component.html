@@ -1,37 +1,36 @@
 <div class="container color-dark">
-  <button (click)="logout()">
-    Logout again?
-  </button>
   <div class="col">
     <p>My active Boards on Trello</p>
   </div>
   <div class="col">
-    <p>Add a new Board</p>
+    <p>Add a new Card</p>
   </div>
 </div>
 <div class="container color-light">
   <div class="col">
     <ul class="board-list-container">
-      <li  *ngFor="let board of boards" (click)="getListsByBoardId(board.id)">
+      <li  *ngFor="let board of boards" (click)="getListsByBoardId(board.id); getCurrentBoard(board.id)">
         {{ board.name }}
       </li>
     </ul>
   </div>
   <div class="col">
-    <p class="sm">  You can use this form to add a new Trello-Card to your selected Board.
-                    Simply click on a Board of to Boardlist to show your current Cards.</p>
+    <p class="sm">  You can use this form to add a new Trello-Card to the selected List of a Board.
+                    Simply click on a Board on the left to show your current lists.</p>
     <hr>
+
+    <p class="sm"> Lists of {{cBoard}}</p>
     <ul class="card-list-container">
       <li  *ngFor="let list of lists">
-        <input type="radio" id="{{list.id}}" value="{{list.name}}">
+        <input type="radio" name="option" id="{{list.id}}" value="{{list.name}}" (click)="setList(list.id)">
         <label for="{{list.id}}"> &nbsp; {{list.name}} </label>
       </li>
     </ul>
 
     <form>
       <hr>
-      <p class="sm">  Insert the name of your new card in the textbox below and click
-                      on the green button to finally add your card to the selected board.</p>
+      <p class="sm">  Select one list and insert the name of your new card in the textbox below. Click
+                      on the green button to finally add your card to the selected list on your board.</p>
 
       <input type="text" class="txt" name="card" placeholder="Name of your card..">
       <input type="submit" class="btn" value="Add Card">

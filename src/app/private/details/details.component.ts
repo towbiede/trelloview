@@ -51,7 +51,6 @@ export class DetailsComponent implements OnInit {
     const getCardsUrl = 'https://api.trello.com/1/lists/' + this.lId + '/cards';
     return this.http.get(getCardsUrl).subscribe(data => {
       this.cards = data;
-
     });
   }
 
@@ -73,7 +72,7 @@ export class DetailsComponent implements OnInit {
 
 
   getChecklistByCardId(cardId: string) {
-this.cardId = cardId;
+    this.cardId = cardId;
     const getChecklistsUrl = 'https://api.trello.com/1/cards/' + this.cardId + '/checklists'   ;
     return this.http.get(getChecklistsUrl).subscribe(data => {
       this.checklists = data;

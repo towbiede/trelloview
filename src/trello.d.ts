@@ -41,6 +41,17 @@ export namespace Trello {
     idBoardsPinned?: any;
   }
 
+  export interface Cards {
+    name: string;
+    desc: string;
+    pos: string;
+    due: string;
+    dueComplete: boolean;
+    isList: string;
+    idMembers: string;
+    idLabels: string;
+  }
+
   export interface Emoji {}
 
   export interface BioData {
