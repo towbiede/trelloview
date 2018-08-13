@@ -27,6 +27,10 @@ export class PrivateComponent implements OnInit {
     });
   }
 
+  getUserName(): string {
+    return this.username;
+  }
+
   ngOnInit() {
     this.getCurrentUser();
   }

@@ -1,32 +1,36 @@
 <!-- Navigation bar of our root app component -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-  <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> TrelloView </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbar1">
-    <ul class="navbar-nav ml-auto">
-      <li class="nav-item active"><a routerLink="" class="nav-item"> Dashboard <span class="sr-only">(current)</span></a></li>
-      <li class="nav-item"><a routerLink="details" class="nav-item">Details</a></li>
-      <li class="nav-item"><a routerLink="visual" class="nav-item">Visual</a></li>
-    </ul>
-  </div>
+<div class="container">
 
-  <div>
-    <a href="{{userUrl}}">{{username}}</a>
-    <img class="rounded-circle avatar-img" src="{{avatarImg}}">
-  </div>
-
-  <div>
-    <button class="btn btn-light" (click)="logout()">
-      Logout
+  <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+    <a class="navbar-brand" href="#"> <img class="logo" src="http://bootstrap-ecommerce.com/main/images/logo-white.png" height="40"> TrelloView</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
     </button>
-  </div>
 
-</nav>
+    <div class="collapse navbar-collapse" id="navbar1">
 
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" routerLink=""> Dashboard </a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="details"> Details </a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="visual"> Visual </a></li>
 
+        <div class="dropdown">
+          <button class="btn btn-outline-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{getUserName()}}
+          </button>
+          <img class="rounded-circle avatar-img" src="{{avatarImg}}">
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="{{userUrl}}" target="_blank">Trello-Profile</a>
+            <a class="dropdown-item" (click)="logout()">Logout</a>
+          </div>
+
+        </div>
+      </ul>
+    </div>
+  </nav>
+
+</div>
 
 
 <!--
