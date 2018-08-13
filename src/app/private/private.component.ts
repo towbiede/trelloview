@@ -20,7 +20,6 @@ export class PrivateComponent implements OnInit {
   getCurrentUser() {
     return this.http.get('https://api.trello.com/1/members/me?fields=all').subscribe(data => {
       this.user = data;
-      console.log(data);
       this.username = this.user.username;
       this.avatarImg = 'https://trello-avatars.s3.amazonaws.com/' + this.user.avatarHash + '/170.png';
       this.userUrl = this.user.url;
