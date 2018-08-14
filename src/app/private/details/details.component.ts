@@ -34,6 +34,8 @@ export class DetailsComponent implements OnInit {
   labels: any;
   checklists: any;
   checkItems: any;
+  avatarImg : string;
+
 
 
 
@@ -93,6 +95,7 @@ export class DetailsComponent implements OnInit {
     const getMembersUrl = 'https://api.trello.com/1/boards/' + this.bId + '/members' ;
     return this.http.get(getMembersUrl).subscribe(data => {
       this.members = data;
+
 
     });
   }
