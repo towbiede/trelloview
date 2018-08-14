@@ -13,6 +13,7 @@
       <li  *ngFor="let board of boards"  (click)="getListsByBoardId(board.id); getMembersByBoardId(board.id); ">
 
         {{ board.name  }}
+
       </li>
 
     </ul>
@@ -20,11 +21,12 @@
 
   <div class="col">
 
-    <hr>
+
     <ul class="card-list-container">
       <p>Members</p>
       <li  *ngFor="let member of members"  >
         {{ member.fullName +" aka: " + member.username }}
+        <img  src="{{'https://trello-avatars.s3.amazonaws.com/' + member.avatarHash + '/170.png'}}">
       </li>
     </ul>
 
@@ -59,7 +61,7 @@
 
     <hr>
     <ul class="card-list-container">
-      <p>Checkliste</p>
+      <p>Checklists</p>
       <li  *ngFor="let checklist of checklists" (click) = "getCheckItemsByChecklistId(checklist.id)" >
 
         {{ checklist.name}}
