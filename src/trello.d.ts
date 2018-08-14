@@ -47,7 +47,7 @@ export namespace Trello {
     pos: string;
     due: string;
     dueComplete: boolean;
-    isList: string;
+    idList: string;
     idMembers: string;
     idLabels: string;
   }
