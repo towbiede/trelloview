@@ -20,10 +20,7 @@ export class DetailsComponent implements OnInit {
 
   }
 
-  /**
-   * ANFANG
-   * Test Wiese
-   */
+
 
   bId: string;
   lId: string;
@@ -43,6 +40,7 @@ export class DetailsComponent implements OnInit {
   getBoards() {
     return this.http.get('https://api.trello.com/1/members/me/boards').subscribe(data => {
       this.boards = data;
+
     });
   }
 
@@ -99,10 +97,6 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-  /**
-   * ENDE
-   * Test Wiese
-   */
 
 
 
