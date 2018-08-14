@@ -8,6 +8,13 @@ import Cards = Trello.Cards;
 import {catchError} from 'rxjs/internal/operators';
 import {Observable} from 'rxjs/index';
 
+
+const httpOptions = {
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Authorization': 'my-auth-token'
+  })
+};
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -37,7 +44,7 @@ export class DashboardComponent implements OnInit {
 
   getCardsByBoardId(boardId: string) {
     this.bId = boardId;
-    const getCardsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/cards'
+    const getCardsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/cards';
     return this.http.get(getCardsUrl).subscribe(data => {
       this.cards = data;
     });
@@ -45,7 +52,7 @@ export class DashboardComponent implements OnInit {
 
   getListsByBoardId(boardId: string) {
     this.bId = boardId;
-    const getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/lists'
+    const getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/lists';
     return this.http.get(getListsUrl).subscribe(data => {
       this.lists = data;
     });
@@ -72,23 +79,30 @@ export class DashboardComponent implements OnInit {
   }
 
 
-  /**
-  const httpOptions = {
-    headers: new HttpHeaders({
-      'Content-Type':  'application/json',
-      'Authorization': 'my-auth-token'
-    })
-  };
 
-  addCardToList (newCard: Cards): Observable<Cards> {
+
+
+  addCardToList (): Observable<Cards> {
+
+const newCard : Cards = {
+    name: 'xx',
+    desc: 'xyx',
+    pos: 'top',
+    due: '11.12.2019',
+    dueComplete: false,
+    idList: this.selectedList,
+    idMembers: '',
+    idLabels: ''
+};
+
     return this.http.post<Cards>('https://api.trello.com/1/cards?idList='+this.selectedList, newCard, httpOptions)
       .pipe(
-        catchError(this.handleError('addCardToList', newCard))
+
       );
   }
-   **/
 
 
+a
 
   ngOnInit() {
     this.getBoards();
