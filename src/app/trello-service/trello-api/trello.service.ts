@@ -9,6 +9,7 @@ import {catchError} from "rxjs/internal/operators";
 import {HandleError, HttpErrorHandler} from "../http-error-handler.service";
 import {TrelloAuthService} from '../trello-auth/trello-auth.service';
 import Lists = Trello.Lists;
+import {TRELLO_STORAGE_KEY} from "../trello-auth/trello-storage-key";
 
 
 
@@ -16,7 +17,7 @@ import Lists = Trello.Lists;
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json',
-    'Authorization': 'my-auth-token'
+
   })
 };
 
@@ -70,12 +71,9 @@ export class TrelloService {
 
   addCardToList ( list: Lists, card: Cards): Observable<Cards> {
     console.log('trello service addcardToList');
-    alert(list.id);
 
+    httpOptions.headers.append('Authorization',  localStorage.getItem(TRELLO_STORAGE_KEY)  );
 
-   /**console.log(this.apiToken);
-    httpOptions.headers.append('Authorization', this.authService.getToken());
-**/
     return this.httpClient.post<Cards>('https://api.trello.com/1/cards?idList=' + list.id, card,httpOptions)
       .pipe(
         catchError(this.handleError('addCardToList',card ))

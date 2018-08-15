@@ -35,7 +35,7 @@ export class TrelloAuthService {
     console.log(this.apiKey);
     return 'https://trello.com/1/authorize?response_type=token&key=' + this.apiKey +
       '&return_url=' + returnUrl +
-      '&callback_method=fragment&scope=read&expiration=never&name=Angular-TrelloView-App';
+      '&callback_method=fragment&scope=read,write&expiration=never&name=Angular-TrelloView-App';
   }
 
   /**
