@@ -73,36 +73,26 @@ export class DashboardComponent implements OnInit {
   }
 
   setList(listId: string) {
-    return this.http.get('https://api.trello.com/1/lists/id' + listId).subscribe(data => {
+    return this.http.get('https://api.trello.com/1/lists/' + listId).subscribe(data => {
       this.selectedList = data;
     });
   }
 
-
-
-
-
   addCardToList (): Observable<Cards> {
+    const newCard: Cards = {
+        name: 'xx',
+        desc: 'xyx',
+        pos: 'top',
+        due: '11.12.2019',
+        dueComplete: false,
+        idList: this.selectedList,
+        idMembers: '',
+        idLabels: ''
+  };
 
-const newCard : Cards = {
-    name: 'xx',
-    desc: 'xyx',
-    pos: 'top',
-    due: '11.12.2019',
-    dueComplete: false,
-    idList: this.selectedList,
-    idMembers: '',
-    idLabels: ''
-};
-
-    return this.http.post<Cards>('https://api.trello.com/1/cards?idList='+this.selectedList, newCard, httpOptions)
-      .pipe(
-
-      );
+    return this.http.post<Cards>('https://api.trello.com/1/cards?idList=' + this.selectedList, newCard, httpOptions)
+      .pipe();
   }
-
-
-a
 
   ngOnInit() {
     this.getBoards();
