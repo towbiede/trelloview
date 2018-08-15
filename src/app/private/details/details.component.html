@@ -25,8 +25,7 @@
     <ul class="card-list-container">
       <p>Members</p>
       <li *ngFor="let member of members" >
-        {{ member.fullName +" aka: " + member.username }}
-        <img src="{{'https://trello-avatars.s3.amazonaws.com/' + member.avatarHash + '/170.png'}}">
+        {{ member.fullName +" aka. " + member.username }}
       </li>
     </ul>
 

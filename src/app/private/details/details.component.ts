@@ -85,13 +85,12 @@ export class DetailsComponent implements OnInit {
 
   getMembersByBoardId(boardId: string) {
     this.bId = boardId;
-    const getMembersUrl = 'https://api.trello.com/1/boards/' + this.bId + '/members' ;
+    const getMembersUrl = 'https://api.trello.com/1/boards/' + this.bId + '/members';
     return this.http.get(getMembersUrl).subscribe(data => {
       this.members = data;
-
-
     });
   }
+
 
   logout() {
     this.trelloAuthService.logout();
