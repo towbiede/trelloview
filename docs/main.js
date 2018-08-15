@@ -1,5 +1,285 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["main"],{
 
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	var module = __webpack_require__(id);
+	return module;
+}
+function webpackContextResolve(req) {
+	var id = map[req];
+	if(!(id + 1)) { // check for number or string
+		var e = new Error('Cannot find module "' + req + '".');
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return id;
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
 /***/ "./src/$$_lazy_route_resource lazy recursive":
 /*!**********************************************************!*\
   !*** ./src/$$_lazy_route_resource lazy namespace object ***!
@@ -161,12 +441,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _public_public_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./public/public.component */ "./src/app/public/public.component.ts");
 /* harmony import */ var _public_public_guard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./public/public.guard */ "./src/app/public/public.guard.ts");
 /* harmony import */ var _private_private_guard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./private/private.guard */ "./src/app/private/private.guard.ts");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/index.js");
+/* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ng2_charts__WEBPACK_IMPORTED_MODULE_13__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -197,7 +480,8 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_8__["AppRoutingModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"],
-                _trello_service_trello_service_module__WEBPACK_IMPORTED_MODULE_3__["TrelloServiceModule"]
+                _trello_service_trello_service_module__WEBPACK_IMPORTED_MODULE_3__["TrelloServiceModule"],
+                ng2_charts__WEBPACK_IMPORTED_MODULE_13__["ChartsModule"]
             ],
             providers: [_private_private_guard__WEBPACK_IMPORTED_MODULE_12__["PrivateGuard"], _public_public_guard__WEBPACK_IMPORTED_MODULE_11__["PublicGuard"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
@@ -217,7 +501,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container color-dark\">\n  <button (click)=\"logout()\">\n    Logout again?\n  </button>\n  <div class=\"col\">\n    <p>My active Boards on Trello</p>\n  </div>\n  <div class=\"col\">\n    <p>Add a new Board</p>\n  </div>\n</div>\n<div class=\"container color-light\">\n  <div class=\"col\">\n    <ul class=\"board-list-container\">\n      <li  *ngFor=\"let board of boards\" (click)=\"getListsByBoardId(board.id)\">\n        {{ board.name }}\n      </li>\n    </ul>\n  </div>\n  <div class=\"col\">\n    <p class=\"sm\">  You can use this form to add a new Trello-Card to your selected Board.\n                    Simply click on a Board of to Boardlist to show your current Cards.</p>\n    <hr>\n    <ul class=\"card-list-container\">\n      <li  *ngFor=\"let list of lists\">\n        <input type=\"radio\" id=\"{{list.id}}\" value=\"{{list.name}}\">\n        <label for=\"{{list.id}}\"> &nbsp; {{list.name}} </label>\n      </li>\n    </ul>\n\n    <form>\n      <hr>\n      <p class=\"sm\">  Insert the name of your new card in the textbox below and click\n                      on the green button to finally add your card to the selected board.</p>\n\n      <input type=\"text\" class=\"txt\" name=\"card\" placeholder=\"Name of your card..\">\n      <input type=\"submit\" class=\"btn\" value=\"Add Card\">\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container color-dark\">\n  <div class=\"col\">\n    <p>My active Boards on Trello</p>\n  </div>\n  <div class=\"col\">\n    <p>Add a new Card</p>\n  </div>\n</div>\n<div class=\"container color-light\">\n  <div class=\"col\">\n    <ul class=\"board-list-container\">\n      <li  *ngFor=\"let board of boards\" (click)=\"getListsByBoardId(board.id); getCurrentBoard(board.id)\">\n        {{ board.name }}\n      </li>\n    </ul>\n  </div>\n  <div class=\"col\">\n    <p class=\"sm\">  You can use this form to add a new Trello-Card to the selected List of a Board.\n                    Simply click on a Board on the left to show your current lists.</p>\n    <hr>\n\n    <p class=\"sm\"> Lists of <a>{{getBoardName()}}</a></p>\n    <ul class=\"card-list-container\">\n      <li  *ngFor=\"let list of lists\">\n        <input type=\"radio\" name=\"option\" id=\"{{list.id}}\" value=\"{{list.name}}\" (click)=\"setList(list.id)\">\n        <label for=\"{{list.id}}\"> &nbsp; {{list.name}} </label>\n      </li>\n    </ul>\n\n    <form >\n      <hr>\n      <p class=\"sm\">  Select one list and insert the name of your new card in the textbox below. Click\n                      on the green button to finally add your card to the selected list on your board.</p>\n\n      <input type=\"text\" class=\"txt\" name=\"card\" placeholder=\"Name of your card..\">\n      <input type=\"submit\" class=\"btn\" value=\"Add Card\" (click)=\"addCardToList()\" >\n    </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -259,6 +543,12 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
+        'Content-Type': 'application/json',
+        'Authorization': 'my-auth-token'
+    })
+};
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(http, trelloAuthService, trelloService) {
         this.http = http;
@@ -266,6 +556,7 @@ var DashboardComponent = /** @class */ (function () {
         this.trelloService = trelloService;
         /**private apiURL = 'https://api.trello.com/1/members/me/boards?key=' + this.apiKey + '&token=' + this.apiToken;*/
         this.data = {};
+        this.cBoard = null;
     }
     DashboardComponent.prototype.getBoards = function () {
         var _this = this;
@@ -288,6 +579,40 @@ var DashboardComponent = /** @class */ (function () {
         return this.http.get(getListsUrl).subscribe(function (data) {
             _this.lists = data;
         });
+    };
+    DashboardComponent.prototype.getCurrentBoard = function (boardId) {
+        var _this = this;
+        return this.http.get('https://api.trello.com/1/boards/' + boardId).subscribe(function (data) {
+            _this.cBoard = data;
+        });
+    };
+    DashboardComponent.prototype.getBoardName = function () {
+        if (this.cBoard === null) {
+            return '(No board selected)';
+        }
+        else {
+            return this.cBoard.name;
+        }
+    };
+    DashboardComponent.prototype.setList = function (listId) {
+        var _this = this;
+        return this.http.get('https://api.trello.com/1/lists/' + listId).subscribe(function (data) {
+            _this.selectedList = data;
+        });
+    };
+    DashboardComponent.prototype.addCardToList = function () {
+        var newCard = {
+            name: 'xx',
+            desc: 'xyx',
+            pos: 'top',
+            due: '11.12.2019',
+            dueComplete: false,
+            idList: this.selectedList,
+            idMembers: '',
+            idLabels: ''
+        };
+        return this.http.post('https://api.trello.com/1/cards?idList=' + this.selectedList, newCard, httpOptions)
+            .pipe();
     };
     DashboardComponent.prototype.ngOnInit = function () {
         this.getBoards();
@@ -317,7 +642,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  details works!\n</p>\n"
+module.exports = "\n  <div class=\"container color-dark\">\n\n<div class=\"col\">\n  <p class=\"sm\"> Here you can get more information about your Trello-Cards:</p>\n</div>\n\n</div>\n<div class=\"container color-light\">\n  <div class=\"col\">\n    <ul class=\"board-list-container\">\n      <p>Boards</p>\n      <li  *ngFor=\"let board of boards\"  (click)=\"getListsByBoardId(board.id); getMembersByBoardId(board.id); \">\n\n        {{ board.name  }}\n\n      </li>\n\n    </ul>\n  </div>\n\n  <div class=\"col\">\n\n\n    <ul class=\"card-list-container\">\n      <p>Members</p>\n      <li *ngFor=\"let member of members\" >\n        {{ member.fullName +\" aka. \" + member.username }}\n      </li>\n    </ul>\n\n  </div>\n\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>Lists</p>\n      <li  *ngFor=\"let list of lists; let board of boards\" (click) = \"getCardsByBoardId(list.id); getLabelByBoardId(board.id)\">\n        {{ list.name}}\n\n      </li>\n    </ul>\n\n  </div>\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>Cards</p>\n      <li  *ngFor=\"let card of cards; let label of labels\" (click) = \"getChecklistByCardId(card.id) \">\n\n        {{ card.name + \" \" + label.color}}\n      </li>\n    </ul>\n\n  </div>\n\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>Checklists</p>\n      <li  *ngFor=\"let checklist of checklists\" (click) = \"getCheckItemsByChecklistId(checklist.id)\" >\n\n        {{ checklist.name}}\n      </li>\n    </ul>\n\n  </div>\n\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>CheckItems</p>\n      <li  *ngFor=\"let checkItem of checkItems\"  >\n\n        {{ checkItem.name}}\n      </li>\n    </ul>\n\n  </div>\n\n\n\n\n\n</div>\n\n"
 
 /***/ }),
 
@@ -328,7 +653,7 @@ module.exports = "<p>\n  details works!\n</p>\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".container {\n  display: -ms-grid;\n  display: grid;\n  -ms-grid-columns: 50% auto;\n      grid-template-columns: 50% auto; }\n\n.col {\n  padding: .4em 1.3em; }\n\n.color-dark {\n  background: #2885C4; }\n\n.color-light {\n  background: #57B3F1; }\n\ninput.txt {\n  border: 0;\n  padding: 1em;\n  width: 80%;\n  margin-bottom: 2em; }\n\ninput.btn {\n  border: 0;\n  display: block;\n  padding: 1em 3em;\n  background: #A5F883;\n  color: #003A61;\n  margin-bottom: 1em;\n  cursor: pointer; }\n\n.board-list-container {\n  list-style: none; }\n\n.board-list-container li {\n  background: #3FA0E1;\n  padding: .5em;\n  margin-top: 10px;\n  cursor: pointer; }\n\n.card-list-container {\n  list-style: none; }\n\n.card-list-container li {\n  background: #3FA0E1;\n  padding: .5em;\n  margin-top: 10px;\n  cursor: pointer; }\n\n.board-list-container li:hover {\n  background: #78bcea; }\n\n.card-list-container li:hover {\n  background: #78bcea; }\n"
 
 /***/ }),
 
@@ -399,12 +724,75 @@ var DetailsComponent = /** @class */ (function () {
         this.http = http;
         this.trelloAuthService = trelloAuthService;
         this.trelloService = trelloService;
+        this.data = {};
     }
     DetailsComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var user;
             return __generator(this, function (_a) {
-                return [2 /*return*/];
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.trelloService.getMe()];
+                    case 1:
+                        user = _a.sent();
+                        console.log('User:', user);
+                        this.getBoards();
+                        return [2 /*return*/];
+                }
             });
+        });
+    };
+    DetailsComponent.prototype.getBoards = function () {
+        var _this = this;
+        return this.http.get('https://api.trello.com/1/members/me/boards').subscribe(function (data) {
+            _this.boards = data;
+        });
+    };
+    DetailsComponent.prototype.getCardsByBoardId = function (listId) {
+        var _this = this;
+        this.lId = listId;
+        var getCardsUrl = 'https://api.trello.com/1/lists/' + this.lId + '/cards';
+        return this.http.get(getCardsUrl).subscribe(function (data) {
+            _this.cards = data;
+        });
+    };
+    DetailsComponent.prototype.getListsByBoardId = function (boardId) {
+        var _this = this;
+        this.bId = boardId;
+        var getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/lists';
+        return this.http.get(getListsUrl).subscribe(function (data) {
+            _this.lists = data;
+        });
+    };
+    DetailsComponent.prototype.getLabelByBoardId = function (boardId) {
+        var _this = this;
+        this.bId = boardId;
+        var getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/labels/?fields=color&limit=2';
+        return this.http.get(getListsUrl).subscribe(function (data) {
+            _this.labels = data;
+        });
+    };
+    DetailsComponent.prototype.getChecklistByCardId = function (cardId) {
+        var _this = this;
+        this.cardId = cardId;
+        var getChecklistsUrl = 'https://api.trello.com/1/cards/' + this.cardId + '/checklists';
+        return this.http.get(getChecklistsUrl).subscribe(function (data) {
+            _this.checklists = data;
+        });
+    };
+    DetailsComponent.prototype.getCheckItemsByChecklistId = function (checklistId) {
+        var _this = this;
+        this.chId = checklistId;
+        var getChecklistsUrl = 'https://api.trello.com/1/checklists/' + this.chId + '/checkItems';
+        return this.http.get(getChecklistsUrl).subscribe(function (data) {
+            _this.checkItems = data;
+        });
+    };
+    DetailsComponent.prototype.getMembersByBoardId = function (boardId) {
+        var _this = this;
+        this.bId = boardId;
+        var getMembersUrl = 'https://api.trello.com/1/boards/' + this.bId + '/members';
+        return this.http.get(getMembersUrl).subscribe(function (data) {
+            _this.members = data;
         });
     };
     DetailsComponent.prototype.logout = function () {
@@ -432,7 +820,7 @@ var DetailsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation bar of our root app component -->\n\n<nav>\n  <a routerLink=\"\">Dashboard</a>\n  <a routerLink=\"details\">Details</a>\n  <a routerLink=\"visual\">Visual</a>\n</nav>\n\n<!--\nUsually we're nesting the different components into our root like this:\n\n<app-dashboard></app-dashboard>\n<app-details></app-details>\n<app-visual></app-visual>\n\nBut for now we don't need this anymore because we'er using the routing module\nto switch between our different components with the navigation bar on our site.\n-->\n\n<!-- Router outlet shows you the component you navigated through 'routerLink' -->\n<router-outlet></router-outlet>\n"
+module.exports = "<!-- Navigation bar of our root app component -->\n\n<div class=\"container\">\n\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-transparent\">\n    <a class=\"navbar-brand\" href=\"#\"> <img class=\"logo\" src=\"http://bootstrap-ecommerce.com/main/images/logo-white.png\" height=\"40\"> TrelloView</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar1\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\n    <div class=\"collapse navbar-collapse\" id=\"navbar1\">\n\n      <ul class=\"navbar-nav ml-auto\">\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"\"> Dashboard </a></li>\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"details\"> Details </a></li>\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"visual\"> Visual </a></li>\n\n        <div class=\"dropdown\">\n          <button class=\"btn btn-outline-light dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            {{getUserName()}}\n          </button>\n          <img class=\"rounded-circle avatar-img\" src=\"{{avatarImg}}\">\n          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n            <a class=\"dropdown-item\" href=\"{{userUrl}}\" target=\"_blank\">Trello-Profile</a>\n            <a class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\n          </div>\n\n        </div>\n      </ul>\n    </div>\n  </nav>\n\n</div>\n\n\n<!--\n<nav class=\"navbar navbar-default navbar-static-top\">\n  <div class=\"container\">\n    <a routerLink=\"\">Dashboard</a>\n    <a routerLink=\"details\">Details</a>\n    <a routerLink=\"visual\">Visual</a>\n  </div>\n</nav>\n-->\n\n<!--\nUsually we're nesting the different components into our root like this:\n\n<app-dashboard></app-dashboard>\n<app-details></app-details>\n<app-visual></app-visual>\n\nBut for now we don't need this anymore because we'er using the routing module\nto switch between our different components with the navigation bar on our site.\n-->\n\n<!-- Router outlet shows you the component you navigated through 'routerLink' -->\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
@@ -443,7 +831,7 @@ module.exports = "<!-- Navigation bar of our root app component -->\n\n<nav>\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#user-container {\n  height: 100px;\n  width: 400px;\n  right: 0px;\n  position: absolute;\n  padding: 10px;\n  top: 0px;\n  margin-top: 40px;\n  margin-right: 0px;\n  margin-bottom: 0px; }\n\n#user-container a {\n  color: #fff; }\n\n.avatar-img {\n  height: 50px;\n  width: 50px;\n  margin-left: 10px; }\n"
 
 /***/ }),
 
@@ -458,6 +846,9 @@ module.exports = ""
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PrivateComponent", function() { return PrivateComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _trello_service_trello_api_trello_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../trello-service/trello-api/trello.service */ "./src/app/trello-service/trello-api/trello.service.ts");
+/* harmony import */ var _trello_service_trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../trello-service/trello-auth/trello-auth.service */ "./src/app/trello-service/trello-auth/trello-auth.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -468,10 +859,32 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
 var PrivateComponent = /** @class */ (function () {
-    function PrivateComponent() {
+    function PrivateComponent(http, trelloAuthService, trelloService) {
+        this.http = http;
+        this.trelloAuthService = trelloAuthService;
+        this.trelloService = trelloService;
     }
+    PrivateComponent.prototype.getCurrentUser = function () {
+        var _this = this;
+        return this.http.get('https://api.trello.com/1/members/me?fields=all').subscribe(function (data) {
+            _this.user = data;
+            _this.username = _this.user.username;
+            _this.avatarImg = 'https://trello-avatars.s3.amazonaws.com/' + _this.user.avatarHash + '/170.png';
+            _this.userUrl = _this.user.url;
+        });
+    };
+    PrivateComponent.prototype.getUserName = function () {
+        return this.username;
+    };
     PrivateComponent.prototype.ngOnInit = function () {
+        this.getCurrentUser();
+    };
+    PrivateComponent.prototype.logout = function () {
+        this.trelloAuthService.logout();
     };
     PrivateComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -479,7 +892,7 @@ var PrivateComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./private.component.html */ "./src/app/private/private.component.html"),
             styles: [__webpack_require__(/*! ./private.component.scss */ "./src/app/private/private.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _trello_service_trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_2__["TrelloAuthService"], _trello_service_trello_api_trello_service__WEBPACK_IMPORTED_MODULE_1__["TrelloService"]])
     ], PrivateComponent);
     return PrivateComponent;
 }());
@@ -580,7 +993,7 @@ var PRIV_ROUTES = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  visual works!\n</p>\n"
+module.exports = "<div class=\"container\">\n  <p>\n    Here we have prepared some graphics for you:\n  </p>\n\n  <div style=\"display: block\">\n    <canvas baseChart\n            [data]=\"doughnutChartData\"\n            [labels]=\"doughnutChartLabels\"\n            [chartType]=\"doughnutChartType\"\n            (chartHover)=\"chartHovered($event)\"\n            (chartClick)=\"chartClicked($event)\"></canvas>\n  </div>\n\n</div>\n"
 
 /***/ }),
 
@@ -662,10 +1075,75 @@ var VisualComponent = /** @class */ (function () {
         this.http = http;
         this.trelloAuthService = trelloAuthService;
         this.trelloService = trelloService;
+        this.boardNumber = 0;
+        this.listNumber = 0;
+        this.cardNumber = 0;
+        /**
+         * This is just a TestChart
+         */
+        /** DoughnutChart **/
+        this.doughnutChartLabels = ['Cards', 'Lists', 'Boards'];
+        this.doughnutChartData = [1, 1, 1];
+        this.doughnutChartType = 'doughnut';
     }
+    VisualComponent.prototype.getNumbers = function () {
+        var _this = this;
+        /** get all boards **/
+        this.http.get('https://api.trello.com/1/members/me/boards').subscribe(function (data) {
+            _this.boards = data;
+            /** iterate to count the boards and set ChartData to the amount of boards, and get every list in every single board **/
+            for (var _i = 0, _a = _this.boards; _i < _a.length; _i++) {
+                var board = _a[_i];
+                _this.boardNumber = _this.boardNumber + 1;
+                _this.http.get('https://api.trello.com/1/boards/' + board.id + '/lists').subscribe(function (data) {
+                    _this.lists = data;
+                    /** iterate lists **/
+                    for (var _i = 0, _a = _this.lists; _i < _a.length; _i++) {
+                        var list = _a[_i];
+                        _this.listNumber = _this.listNumber + 1;
+                        _this.http.get('https://api.trello.com/1/lists/' + list.id + '/cards').subscribe(function (data) {
+                            _this.cards = data;
+                            /** iterate cards **/
+                            for (var _i = 0, _a = _this.cards; _i < _a.length; _i++) {
+                                var card = _a[_i];
+                                _this.cardNumber = _this.cardNumber + 1;
+                            }
+                            _this.doughnutChartData[0] = _this.cardNumber;
+                        });
+                    }
+                    _this.doughnutChartData[1] = _this.listNumber;
+                });
+            }
+            _this.doughnutChartData[2] = _this.boardNumber;
+        });
+        this.http.get('https://api.trello.com/1/members/me/lists').subscribe(function (data) {
+            _this.lists = data;
+            for (var _i = 0, _a = _this.lists; _i < _a.length; _i++) {
+                var list = _a[_i];
+                _this.listNumber = _this.listNumber + 1;
+            }
+            _this.doughnutChartData[1] = _this.listNumber;
+        });
+        this.http.get('https://api.trello.com/1/members/me/cards').subscribe(function (data) {
+            _this.cards = data;
+            for (var _i = 0, _a = _this.cards; _i < _a.length; _i++) {
+                var card = _a[_i];
+                _this.cardNumber = _this.cardNumber + 1;
+            }
+            _this.doughnutChartData[0] = _this.cardNumber;
+        });
+    };
+    // events
+    VisualComponent.prototype.chartClicked = function (e) {
+        console.log(e);
+    };
+    VisualComponent.prototype.chartHovered = function (e) {
+        console.log(e);
+    };
     VisualComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
+                this.getNumbers();
                 return [2 /*return*/];
             });
         });
@@ -695,7 +1173,7 @@ var VisualComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  public works!\n</p>\n"
+module.exports = "<p>\n  You will be redirected...\n</p>\n"
 
 /***/ }),
 
@@ -853,6 +1331,9 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+/** import { Subscription } from 'rxjs/index';
+ *
+ */
 
 
 /**
