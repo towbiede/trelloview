@@ -15,6 +15,6 @@ import {HttpErrorHandler} from './http-error-handler.service';
     HttpClientModule
   ],
   declarations: [SetTokenComponent],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}, TrelloAuthService, TrelloService,HttpErrorHandler]
+  providers: [{provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true}, TrelloAuthService, TrelloService, HttpErrorHandler]
 })
 export class TrelloServiceModule { }

@@ -1,3 +1,4 @@
+///<reference path="../../../../node_modules/@angular/core/src/metadata/directives.d.ts"/>
 import { Component, OnInit } from '@angular/core';
 import { TrelloAuthService } from '../../trello-service/trello-auth/trello-auth.service';
 import { TrelloService } from '../../trello-service/trello-api/trello.service';
@@ -14,6 +15,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
+
 export class DashboardComponent implements OnInit {
 
   bId: string;
