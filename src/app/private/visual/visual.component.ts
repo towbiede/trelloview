@@ -12,7 +12,7 @@ import {TrelloAuthService} from '../../trello-service/trello-auth/trello-auth.se
 export class VisualComponent implements OnInit {
 
   data: any;
-  boards: any ;
+  boards: any;
   lists: any;
   cards: any;
   boardNumber = 0;
@@ -40,14 +40,14 @@ export class VisualComponent implements OnInit {
       this.boards = data;
 
       /** iterate to count the boards and set ChartData to the amount of boards, and get every list in every single board **/
-      for (const board of this.boards){
+      for (const board of this.boards) {
         this.boardNumber = this.boardNumber + 1;
 
         this.http.get('https://api.trello.com/1/boards/' + board.id + '/lists').subscribe(data => {
           this.lists = data;
 
           /** iterate lists **/
-          for (const list of this.lists){
+          for (const list of this.lists) {
             this.listNumber = this.listNumber + 1;
 
 
@@ -55,7 +55,7 @@ export class VisualComponent implements OnInit {
               this.cards = data;
 
               /** iterate cards **/
-              for (const card of this.cards){
+              for (const card of this.cards) {
                 this.cardNumber = this.cardNumber + 1;
               }
 
@@ -76,7 +76,7 @@ export class VisualComponent implements OnInit {
 
     this.http.get('https://api.trello.com/1/members/me/lists').subscribe(data => {
       this.lists = data;
-      for(const list of this.lists){
+      for(const list of this.lists) {
         this.listNumber = this.listNumber + 1;
       }
       this.doughnutChartData[1] = this.listNumber;
@@ -84,7 +84,7 @@ export class VisualComponent implements OnInit {
 
     this.http.get('https://api.trello.com/1/members/me/cards').subscribe(data => {
       this.cards = data;
-      for(const card of this.cards){
+      for(const card of this.cards) {
         this.cardNumber = this.cardNumber + 1;
       }
       this.doughnutChartData[0] = this.cardNumber;
