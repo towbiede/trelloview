@@ -9,7 +9,7 @@
 <div class="container color-light">
   <div class="col">
     <ul class="board-list-container">
-      <li  *ngFor="let board of boards" (click)="getListsByBoardId(board.id); getCurrentBoard(board.id)">
+      <li  *ngFor="let board of boards" (click)="getListsByBoardId(board.id); getCurrentBoard(board.id);">
         {{ board.name }}
       </li>
     </ul>
@@ -21,8 +21,8 @@
 
     <p class="sm"> Lists of <a>{{getBoardName()}}</a></p>
     <ul class="card-list-container">
-      <li  *ngFor="let list of lists">
-        <input type="radio" name="option" id="{{list.id}}" value="{{list.name}}" (click)="setList(list.id)">
+      <li  *ngFor="let list of lists" (click)="getCardsByListId(list.id);">
+        <input type="radio" name="option" id="{{list.id}}" value="{{list.name}}" (click)="setList(list.id); ">
         <label for="{{list.id}}"> &nbsp; {{list.name}} </label>
       </li>
     </ul>
@@ -32,8 +32,8 @@
       <p class="sm">  Select one list and insert the name of your new card in the textbox below. Click
                       on the green button to finally add your card to the selected list on your board.</p>
 
-      <input type="text" class="txt" name="card" placeholder="Name of your card..">
-      <input type="submit" class="btn" value="Add Card" (click)="addCardToList()" >
+      <input type="text" class="txt" name="card" placeholder="Name of your card.." #card_name >
+      <button (click)="addCard(card_name.value)"  class="btn"  > add Card </button>
     </form>
   </div>
 </div>

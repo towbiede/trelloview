@@ -68,6 +68,15 @@ export namespace Trello {
     totalPerMember: TotalPerMember;
   }
 
+  export interface Lists {
+    id: string;
+    name: string;
+    closed: boolean;
+    idBoard: string;
+    pos: number;
+    subscribed: boolean;
+  }
+
   export interface TotalPerMember2 {
     status: string;
     disableAt: number;

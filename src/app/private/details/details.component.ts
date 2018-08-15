@@ -56,14 +56,14 @@ export class DetailsComponent implements OnInit {
       this.lists = data;
     });
   }
-
+/**
   getLabelByBoardId(boardId: string) {
     this.bId = boardId;
     const getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/labels/?fields=color&limit=2';
     return this.http.get(getListsUrl).subscribe(data => {
       this.labels = data;
     });
-  }
+  }**/
 
   getChecklistByCardId(cardId: string) {
     this.cardId = cardId;

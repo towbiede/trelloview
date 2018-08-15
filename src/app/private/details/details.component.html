@@ -36,7 +36,7 @@
     <hr>
     <ul class="card-list-container">
       <p>Lists</p>
-      <li  *ngFor="let list of lists; let board of boards" (click) = "getCardsByBoardId(list.id); getLabelByBoardId(board.id)">
+      <li  *ngFor="let list of lists; let board of boards" (click) = "getCardsByBoardId(list.id); ">
         {{ list.name}}
 
       </li>
@@ -48,9 +48,9 @@
     <hr>
     <ul class="card-list-container">
       <p>Cards</p>
-      <li  *ngFor="let card of cards; let label of labels" (click) = "getChecklistByCardId(card.id) ">
+      <li  *ngFor="let card of cards " (click) = "getChecklistByCardId(card.id) ">
 
-        {{ card.name + " " + label.color}}
+        {{ card.name }}
       </li>
     </ul>
 

@@ -13,6 +13,7 @@ import {PublicComponent} from './public/public.component';
 import {PublicGuard} from './public/public.guard';
 import {PrivateGuard} from './private/private.guard';
 import { ChartsModule } from 'ng2-charts';
+import {MessageService} from './private/message.service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { ChartsModule } from 'ng2-charts';
     TrelloServiceModule,
     ChartsModule
   ],
-  providers: [PrivateGuard, PublicGuard],
+  providers: [PrivateGuard, PublicGuard, MessageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

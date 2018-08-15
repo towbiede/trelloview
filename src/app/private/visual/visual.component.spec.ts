@@ -17,6 +17,7 @@ describe('VisualComponent', () => {
     fixture = TestBed.createComponent(VisualComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
+
   });
 
   it('should create', () => {

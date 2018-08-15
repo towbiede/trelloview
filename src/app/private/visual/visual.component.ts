@@ -20,7 +20,11 @@ export class VisualComponent implements OnInit {
   cardNumber = 0;
 
 
-  constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {  }
+  constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {
+
+    this.getNumbers();
+
+  }
 
 
   /**
@@ -29,8 +33,9 @@ export class VisualComponent implements OnInit {
 
   /** DoughnutChart **/
   public doughnutChartLabels: string[] = ['Cards', 'Lists', 'Boards'];
-  public doughnutChartData: number[] = [1, 1, 1];
+  public doughnutChartData: number[] = new Array(3 );
   public doughnutChartType = 'doughnut';
+
 
 
   public getNumbers() {
@@ -58,37 +63,24 @@ export class VisualComponent implements OnInit {
               for (const card of this.cards) {
                 this.cardNumber = this.cardNumber + 1;
               }
-
-              this.doughnutChartData[0] = this.cardNumber;
+              /**  this.doughnutChartData.push(this.cardNumber);**/
+           this.doughnutChartData[0] = this.cardNumber;
             });
 
 
           }
-
+          /**     this.doughnutChartData.push(this.listNumber);**/
           this.doughnutChartData[1] = this.listNumber;
         });
 
 
       }
-      this.doughnutChartData[2] = this.boardNumber;
+
+      /**    this.doughnutChartData.push(this.boardNumber);**/
+ this.doughnutChartData[2] = this.boardNumber;
 
     });
 
-    this.http.get('https://api.trello.com/1/members/me/lists').subscribe(data => {
-      this.lists = data;
-      for(const list of this.lists) {
-        this.listNumber = this.listNumber + 1;
-      }
-      this.doughnutChartData[1] = this.listNumber;
-    });
-
-    this.http.get('https://api.trello.com/1/members/me/cards').subscribe(data => {
-      this.cards = data;
-      for(const card of this.cards) {
-        this.cardNumber = this.cardNumber + 1;
-      }
-      this.doughnutChartData[0] = this.cardNumber;
-    });
     }
 
 
@@ -104,11 +96,12 @@ export class VisualComponent implements OnInit {
 
 
   async ngOnInit() {
-    this.getNumbers();
+
   }
 
   logout() {
     this.trelloAuthService.logout();
   }
+
 
 }
