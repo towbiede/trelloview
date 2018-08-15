@@ -345,7 +345,6 @@ var AppRoutingModule = /** @class */ (function () {
             imports: [
                 _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes)
             ],
-            // declarations: []
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         })
     ], AppRoutingModule);
@@ -363,7 +362,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<router-outlet></router-outlet>\n"
+module.exports = "<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -443,12 +442,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _private_private_guard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./private/private.guard */ "./src/app/private/private.guard.ts");
 /* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ng2-charts */ "./node_modules/ng2-charts/index.js");
 /* harmony import */ var ng2_charts__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(ng2_charts__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _private_message_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./private/message.service */ "./src/app/private/message.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -483,7 +484,7 @@ var AppModule = /** @class */ (function () {
                 _trello_service_trello_service_module__WEBPACK_IMPORTED_MODULE_3__["TrelloServiceModule"],
                 ng2_charts__WEBPACK_IMPORTED_MODULE_13__["ChartsModule"]
             ],
-            providers: [_private_private_guard__WEBPACK_IMPORTED_MODULE_12__["PrivateGuard"], _public_public_guard__WEBPACK_IMPORTED_MODULE_11__["PublicGuard"]],
+            providers: [_private_private_guard__WEBPACK_IMPORTED_MODULE_12__["PrivateGuard"], _public_public_guard__WEBPACK_IMPORTED_MODULE_11__["PublicGuard"], _private_message_service__WEBPACK_IMPORTED_MODULE_14__["MessageService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_4__["AppComponent"]]
         })
     ], AppModule);
@@ -501,7 +502,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container color-dark\">\n  <div class=\"col\">\n    <p>My active Boards on Trello</p>\n  </div>\n  <div class=\"col\">\n    <p>Add a new Card</p>\n  </div>\n</div>\n<div class=\"container color-light\">\n  <div class=\"col\">\n    <ul class=\"board-list-container\">\n      <li  *ngFor=\"let board of boards\" (click)=\"getListsByBoardId(board.id); getCurrentBoard(board.id)\">\n        {{ board.name }}\n      </li>\n    </ul>\n  </div>\n  <div class=\"col\">\n    <p class=\"sm\">  You can use this form to add a new Trello-Card to the selected List of a Board.\n                    Simply click on a Board on the left to show your current lists.</p>\n    <hr>\n\n    <p class=\"sm\"> Lists of <a>{{getBoardName()}}</a></p>\n    <ul class=\"card-list-container\">\n      <li  *ngFor=\"let list of lists\">\n        <input type=\"radio\" name=\"option\" id=\"{{list.id}}\" value=\"{{list.name}}\" (click)=\"setList(list.id)\">\n        <label for=\"{{list.id}}\"> &nbsp; {{list.name}} </label>\n      </li>\n    </ul>\n\n    <form >\n      <hr>\n      <p class=\"sm\">  Select one list and insert the name of your new card in the textbox below. Click\n                      on the green button to finally add your card to the selected list on your board.</p>\n\n      <input type=\"text\" class=\"txt\" name=\"card\" placeholder=\"Name of your card..\">\n      <input type=\"submit\" class=\"btn\" value=\"Add Card\" (click)=\"addCardToList()\" >\n    </form>\n  </div>\n</div>\n"
+module.exports = "<div class=\"container color-dark\">\r\n  <div class=\"col\">\r\n    <p>My active Boards on Trello</p>\r\n  </div>\r\n  <div class=\"col\">\r\n    <p>Add a new Card</p>\r\n  </div>\r\n</div>\r\n<div class=\"container color-light\">\r\n  <div class=\"col\">\r\n    <ul class=\"board-list-container\">\r\n      <li  *ngFor=\"let board of boards\" (click)=\"getListsByBoardId(board.id); getCurrentBoard(board.id);\">\r\n        {{ board.name }}\r\n      </li>\r\n    </ul>\r\n  </div>\r\n  <div class=\"col\">\r\n    <p class=\"sm\">  You can use this form to add a new Trello-Card to the selected List of a Board.\r\n                    Simply click on a Board on the left to show your current lists.</p>\r\n    <hr>\r\n\r\n    <p class=\"sm\"> Lists of <a>{{getBoardName()}}</a></p>\r\n    <ul class=\"card-list-container\">\r\n      <li  *ngFor=\"let list of lists\" (click)=\"getCardsByListId(list.id);\">\r\n        <input type=\"radio\" name=\"option\" id=\"{{list.id}}\" value=\"{{list.name}}\" (click)=\"setList(list.id); \">\r\n        <label for=\"{{list.id}}\"> &nbsp; {{list.name}} </label>\r\n      </li>\r\n    </ul>\r\n\r\n    <form >\r\n      <hr>\r\n      <p class=\"sm\">  Select one list and insert the name of your new card in the textbox below. Click\r\n                      on the green button to finally add your card to the selected list on your board.</p>\r\n\r\n      <input type=\"text\" class=\"txt\" name=\"card\" placeholder=\"Name of your card..\" #card_name >\r\n      <input (click)=\"addCard(card_name.value)\"  class=\"btn\"   >\r\n    </form>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -530,6 +531,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _trello_service_trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../trello-service/trello-auth/trello-auth.service */ "./src/app/trello-service/trello-auth/trello-auth.service.ts");
 /* harmony import */ var _trello_service_trello_api_trello_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../trello-service/trello-api/trello.service */ "./src/app/trello-service/trello-api/trello.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -543,49 +545,64 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-var httpOptions = {
-    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpHeaders"]({
-        'Content-Type': 'application/json',
-        'Authorization': 'my-auth-token'
-    })
-};
+
 var DashboardComponent = /** @class */ (function () {
-    function DashboardComponent(http, trelloAuthService, trelloService) {
+    function DashboardComponent(http, trelloAuthService, trelloService, activatedRoute) {
         this.http = http;
         this.trelloAuthService = trelloAuthService;
         this.trelloService = trelloService;
-        /**private apiURL = 'https://api.trello.com/1/members/me/boards?key=' + this.apiKey + '&token=' + this.apiToken;*/
+        this.activatedRoute = activatedRoute;
         this.data = {};
         this.cBoard = null;
     }
     DashboardComponent.prototype.getBoards = function () {
         var _this = this;
-        return this.http.get('https://api.trello.com/1/members/me/boards').subscribe(function (data) {
+        this.trelloService.getBoards().subscribe(function (data) {
             _this.boards = data;
         });
     };
-    DashboardComponent.prototype.getCardsByBoardId = function (boardId) {
-        var _this = this;
-        this.bId = boardId;
-        var getCardsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/cards';
-        return this.http.get(getCardsUrl).subscribe(function (data) {
-            _this.cards = data;
+    /**
+      getBoards() {
+        return this.http.get('https://api.trello.com/1/members/me/boards').subscribe(data => {
+          this.boards = data;
         });
+      }
+    **/
+    DashboardComponent.prototype.getCardsByListId = function (listId) {
+        var _this = this;
+        this.trelloService.getCardsByListId(listId).subscribe(function (data) { return _this.cards = data; });
+        console.log(this.cards);
     };
+    /**
+    getCardsByBoardId(boardId: string) {
+      this.bId = boardId;
+      const getCardsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/cards';
+      return this.http.get(getCardsUrl).subscribe(data => {
+        this.cards = data;
+      });
+    }**/
     DashboardComponent.prototype.getListsByBoardId = function (boardId) {
         var _this = this;
-        this.bId = boardId;
-        var getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/lists';
-        return this.http.get(getListsUrl).subscribe(function (data) {
-            _this.lists = data;
-        });
+        this.trelloService.getListsByBoardId(boardId).subscribe(function (data) { return _this.lists = data; });
     };
+    /**
+      getListsByBoardId(boardId: string) {
+        this.bId = boardId;
+        const getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/lists';
+        return this.http.get(getListsUrl).subscribe(data => {
+          this.lists = data;
+        });
+      }**/
     DashboardComponent.prototype.getCurrentBoard = function (boardId) {
         var _this = this;
-        return this.http.get('https://api.trello.com/1/boards/' + boardId).subscribe(function (data) {
-            _this.cBoard = data;
-        });
+        this.trelloService.getCurrentBoard(boardId).subscribe(function (data) { return _this.cBoard = data; });
     };
+    /**
+      getCurrentBoard(boardId: string) {
+        return this.http.get('https://api.trello.com/1/boards/' + boardId).subscribe(data => {
+          this.cBoard = data;
+        });
+      }**/
     DashboardComponent.prototype.getBoardName = function () {
         if (this.cBoard === null) {
             return '(No board selected)';
@@ -600,22 +617,22 @@ var DashboardComponent = /** @class */ (function () {
             _this.selectedList = data;
         });
     };
-    DashboardComponent.prototype.addCardToList = function () {
-        var newCard = {
-            name: 'xx',
-            desc: 'xyx',
-            pos: 'top',
-            due: '11.12.2019',
-            dueComplete: false,
-            idList: this.selectedList,
-            idMembers: '',
-            idLabels: ''
-        };
-        return this.http.post('https://api.trello.com/1/cards?idList=' + this.selectedList, newCard, httpOptions)
-            .pipe();
+    DashboardComponent.prototype.addCard = function (name) {
+        var _this = this;
+        var newCard = { name: name };
+        console.log('x', this.selectedList);
+        this.trelloService.addCardToList(this.selectedList, newCard).subscribe(function (card) { return _this.cards.push(card); });
     };
     DashboardComponent.prototype.ngOnInit = function () {
         this.getBoards();
+        /** this.subscription = this.activatedRoute.queryParams.subscribe(
+           (selectedBoard: Params) => {
+             this.bId = selectedBoard['board-id'];
+             this.getCurrentBoard(this.bId);
+             this.getListsByBoardId(this.bId);
+           },
+           (error: any) => console.log('error', error)
+         ); **/
     };
     DashboardComponent.prototype.logout = function () {
         this.trelloAuthService.logout();
@@ -626,7 +643,7 @@ var DashboardComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./dashboard.component.html */ "./src/app/private/dashboard/dashboard.component.html"),
             styles: [__webpack_require__(/*! ./dashboard.component.scss */ "./src/app/private/dashboard/dashboard.component.scss")]
         }),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _trello_service_trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_1__["TrelloAuthService"], _trello_service_trello_api_trello_service__WEBPACK_IMPORTED_MODULE_2__["TrelloService"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_3__["HttpClient"], _trello_service_trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_1__["TrelloAuthService"], _trello_service_trello_api_trello_service__WEBPACK_IMPORTED_MODULE_2__["TrelloService"], _angular_router__WEBPACK_IMPORTED_MODULE_4__["ActivatedRoute"]])
     ], DashboardComponent);
     return DashboardComponent;
 }());
@@ -642,7 +659,7 @@ var DashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n  <div class=\"container color-dark\">\n\n<div class=\"col\">\n  <p class=\"sm\"> Here you can get more information about your Trello-Cards:</p>\n</div>\n\n</div>\n<div class=\"container color-light\">\n  <div class=\"col\">\n    <ul class=\"board-list-container\">\n      <p>Boards</p>\n      <li  *ngFor=\"let board of boards\"  (click)=\"getListsByBoardId(board.id); getMembersByBoardId(board.id); \">\n\n        {{ board.name  }}\n\n      </li>\n\n    </ul>\n  </div>\n\n  <div class=\"col\">\n\n\n    <ul class=\"card-list-container\">\n      <p>Members</p>\n      <li *ngFor=\"let member of members\" >\n        {{ member.fullName +\" aka. \" + member.username }}\n      </li>\n    </ul>\n\n  </div>\n\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>Lists</p>\n      <li  *ngFor=\"let list of lists; let board of boards\" (click) = \"getCardsByBoardId(list.id); getLabelByBoardId(board.id)\">\n        {{ list.name}}\n\n      </li>\n    </ul>\n\n  </div>\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>Cards</p>\n      <li  *ngFor=\"let card of cards; let label of labels\" (click) = \"getChecklistByCardId(card.id) \">\n\n        {{ card.name + \" \" + label.color}}\n      </li>\n    </ul>\n\n  </div>\n\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>Checklists</p>\n      <li  *ngFor=\"let checklist of checklists\" (click) = \"getCheckItemsByChecklistId(checklist.id)\" >\n\n        {{ checklist.name}}\n      </li>\n    </ul>\n\n  </div>\n\n  <div class=\"col\">\n\n    <hr>\n    <ul class=\"card-list-container\">\n      <p>CheckItems</p>\n      <li  *ngFor=\"let checkItem of checkItems\"  >\n\n        {{ checkItem.name}}\n      </li>\n    </ul>\n\n  </div>\n\n\n\n\n\n</div>\n\n"
+module.exports = "\r\n  <div class=\"container color-dark\">\r\n\r\n<div class=\"col\">\r\n  <p class=\"sm\"> Here you can get more information about your Trello-Cards:</p>\r\n</div>\r\n\r\n</div>\r\n<div class=\"container color-light\">\r\n  <div class=\"col\">\r\n    <ul class=\"board-list-container\">\r\n      <p>Boards</p>\r\n      <li  *ngFor=\"let board of boards\"  (click)=\"getListsByBoardId(board.id); getMembersByBoardId(board.id); \">\r\n\r\n        {{ board.name  }}\r\n\r\n      </li>\r\n\r\n    </ul>\r\n  </div>\r\n\r\n  <div class=\"col\">\r\n\r\n\r\n    <ul class=\"card-list-container\">\r\n      <p>Members</p>\r\n      <li *ngFor=\"let member of members\" >\r\n        {{ member.fullName +\" aka. \" + member.username }}\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n\r\n  <div class=\"col\">\r\n\r\n    <hr>\r\n    <ul class=\"card-list-container\">\r\n      <p>Lists</p>\r\n      <li  *ngFor=\"let list of lists; let board of boards\" (click) = \"getCardsByBoardId(list.id); \">\r\n        {{ list.name}}\r\n\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n  <div class=\"col\">\r\n\r\n    <hr>\r\n    <ul class=\"card-list-container\">\r\n      <p>Cards</p>\r\n      <li  *ngFor=\"let card of cards \" (click) = \"getChecklistByCardId(card.id) \">\r\n\r\n        {{ card.name }}\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n\r\n  <div class=\"col\">\r\n\r\n    <hr>\r\n    <ul class=\"card-list-container\">\r\n      <p>Checklists</p>\r\n      <li  *ngFor=\"let checklist of checklists\" (click) = \"getCheckItemsByChecklistId(checklist.id)\" >\r\n\r\n        {{ checklist.name}}\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n\r\n  <div class=\"col\">\r\n\r\n    <hr>\r\n    <ul class=\"card-list-container\">\r\n      <p>CheckItems</p>\r\n      <li  *ngFor=\"let checkItem of checkItems\"  >\r\n\r\n        {{ checkItem.name}}\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n\r\n\r\n\r\n\r\n\r\n</div>\r\n\r\n"
 
 /***/ }),
 
@@ -763,14 +780,14 @@ var DetailsComponent = /** @class */ (function () {
             _this.lists = data;
         });
     };
-    DetailsComponent.prototype.getLabelByBoardId = function (boardId) {
-        var _this = this;
+    /**
+      getLabelByBoardId(boardId: string) {
         this.bId = boardId;
-        var getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/labels/?fields=color&limit=2';
-        return this.http.get(getListsUrl).subscribe(function (data) {
-            _this.labels = data;
+        const getListsUrl = 'https://api.trello.com/1/boards/' + this.bId + '/labels/?fields=color&limit=2';
+        return this.http.get(getListsUrl).subscribe(data => {
+          this.labels = data;
         });
-    };
+      }**/
     DetailsComponent.prototype.getChecklistByCardId = function (cardId) {
         var _this = this;
         this.cardId = cardId;
@@ -813,6 +830,52 @@ var DetailsComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/private/message.service.ts":
+/*!********************************************!*\
+  !*** ./src/app/private/message.service.ts ***!
+  \********************************************/
+/*! exports provided: MessageService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MessageService", function() { return MessageService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+var MessageService = /** @class */ (function () {
+    function MessageService() {
+        this.messages = [];
+    }
+    MessageService.prototype.add = function (message) {
+        this.messages.push(message);
+    };
+    MessageService.prototype.clear = function () {
+        this.messages = [];
+    };
+    MessageService.prototype.clearSpecific = function (id) {
+        this.messages.splice(id, 1);
+    };
+    MessageService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])()
+    ], MessageService);
+    return MessageService;
+}());
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+
+
+/***/ }),
+
 /***/ "./src/app/private/private.component.html":
 /*!************************************************!*\
   !*** ./src/app/private/private.component.html ***!
@@ -820,7 +883,7 @@ var DetailsComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Navigation bar of our root app component -->\n\n<div class=\"container\">\n\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-transparent\">\n    <a class=\"navbar-brand\" href=\"#\"> <img class=\"logo\" src=\"http://bootstrap-ecommerce.com/main/images/logo-white.png\" height=\"40\"> TrelloView</a>\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar1\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n\n    <div class=\"collapse navbar-collapse\" id=\"navbar1\">\n\n      <ul class=\"navbar-nav ml-auto\">\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"\"> Dashboard </a></li>\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"details\"> Details </a></li>\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"visual\"> Visual </a></li>\n\n        <div class=\"dropdown\">\n          <button class=\"btn btn-outline-light dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n            {{getUserName()}}\n          </button>\n          <img class=\"rounded-circle avatar-img\" src=\"{{avatarImg}}\">\n          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\n            <a class=\"dropdown-item\" href=\"{{userUrl}}\" target=\"_blank\">Trello-Profile</a>\n            <a class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\n          </div>\n\n        </div>\n      </ul>\n    </div>\n  </nav>\n\n</div>\n\n\n<!--\n<nav class=\"navbar navbar-default navbar-static-top\">\n  <div class=\"container\">\n    <a routerLink=\"\">Dashboard</a>\n    <a routerLink=\"details\">Details</a>\n    <a routerLink=\"visual\">Visual</a>\n  </div>\n</nav>\n-->\n\n<!--\nUsually we're nesting the different components into our root like this:\n\n<app-dashboard></app-dashboard>\n<app-details></app-details>\n<app-visual></app-visual>\n\nBut for now we don't need this anymore because we'er using the routing module\nto switch between our different components with the navigation bar on our site.\n-->\n\n<!-- Router outlet shows you the component you navigated through 'routerLink' -->\n<router-outlet></router-outlet>\n"
+module.exports = "<!-- Navigation bar of our root app component -->\r\n\r\n<div class=\"container\">\r\n\r\n  <nav class=\"navbar navbar-expand-lg navbar-dark bg-transparent\">\r\n    <a class=\"navbar-brand\" href=\"#\"> <img class=\"logo\" src=\"http://bootstrap-ecommerce.com/main/images/logo-white.png\" height=\"40\"> TrelloView</a>\r\n    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbar1\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">\r\n      <span class=\"navbar-toggler-icon\"></span>\r\n    </button>\r\n\r\n    <div class=\"collapse navbar-collapse\" id=\"navbar1\">\r\n\r\n      <ul class=\"navbar-nav ml-auto\">\r\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"\"> Dashboard </a></li>\r\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"details\"> Details </a></li>\r\n        <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"visual\"> Visual </a></li>\r\n\r\n        <div class=\"dropdown\">\r\n          <button class=\"btn btn-outline-light dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\r\n            {{getUserName()}}\r\n          </button>\r\n          <img class=\"rounded-circle avatar-img\" src=\"{{avatarImg}}\">\r\n          <div class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton\">\r\n            <a class=\"dropdown-item\" href=\"{{userUrl}}\" target=\"_blank\">Trello-Profile</a>\r\n            <a class=\"dropdown-item\" (click)=\"logout()\">Logout</a>\r\n          </div>\r\n\r\n        </div>\r\n      </ul>\r\n    </div>\r\n  </nav>\r\n\r\n</div>\r\n\r\n\r\n<!--\r\n<nav class=\"navbar navbar-default navbar-static-top\">\r\n  <div class=\"container\">\r\n    <a routerLink=\"\">Dashboard</a>\r\n    <a routerLink=\"details\">Details</a>\r\n    <a routerLink=\"visual\">Visual</a>\r\n  </div>\r\n</nav>\r\n-->\r\n\r\n<!--\r\nUsually we're nesting the different components into our root like this:\r\n\r\n<app-dashboard></app-dashboard>\r\n<app-details></app-details>\r\n<app-visual></app-visual>\r\n\r\nBut for now we don't need this anymore because we'er using the routing module\r\nto switch between our different components with the navigation bar on our site.\r\n-->\r\n\r\n<!-- Router outlet shows you the component you navigated through 'routerLink' -->\r\n<router-outlet></router-outlet>\r\n"
 
 /***/ }),
 
@@ -993,7 +1056,7 @@ var PRIV_ROUTES = [
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container\">\n  <p>\n    Here we have prepared some graphics for you:\n  </p>\n\n  <div style=\"display: block\">\n    <canvas baseChart\n            [data]=\"doughnutChartData\"\n            [labels]=\"doughnutChartLabels\"\n            [chartType]=\"doughnutChartType\"\n            (chartHover)=\"chartHovered($event)\"\n            (chartClick)=\"chartClicked($event)\"></canvas>\n  </div>\n\n</div>\n"
+module.exports = "<div class=\"container\">\r\n  <p>\r\n    Here you can see the amount of boards, lists and cards:\r\n  </p>\r\n\r\n  <div style=\"display: block\">\r\n    <canvas baseChart\r\n            [data]=\"doughnutChartData\"\r\n            [labels]=\"doughnutChartLabels\"\r\n            [chartType]=\"doughnutChartType\"\r\n            (chartHover)=\"chartHovered($event)\"\r\n            (chartClick)=\"chartClicked($event)\"></canvas>\r\n  </div>\r\n\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1083,8 +1146,9 @@ var VisualComponent = /** @class */ (function () {
          */
         /** DoughnutChart **/
         this.doughnutChartLabels = ['Cards', 'Lists', 'Boards'];
-        this.doughnutChartData = [1, 1, 1];
+        this.doughnutChartData = new Array(3);
         this.doughnutChartType = 'doughnut';
+        this.getNumbers();
     }
     VisualComponent.prototype.getNumbers = function () {
         var _this = this;
@@ -1108,29 +1172,16 @@ var VisualComponent = /** @class */ (function () {
                                 var card = _a[_i];
                                 _this.cardNumber = _this.cardNumber + 1;
                             }
+                            /**  this.doughnutChartData.push(this.cardNumber);**/
                             _this.doughnutChartData[0] = _this.cardNumber;
                         });
                     }
+                    /**     this.doughnutChartData.push(this.listNumber);**/
                     _this.doughnutChartData[1] = _this.listNumber;
                 });
             }
+            /**    this.doughnutChartData.push(this.boardNumber);**/
             _this.doughnutChartData[2] = _this.boardNumber;
-        });
-        this.http.get('https://api.trello.com/1/members/me/lists').subscribe(function (data) {
-            _this.lists = data;
-            for (var _i = 0, _a = _this.lists; _i < _a.length; _i++) {
-                var list = _a[_i];
-                _this.listNumber = _this.listNumber + 1;
-            }
-            _this.doughnutChartData[1] = _this.listNumber;
-        });
-        this.http.get('https://api.trello.com/1/members/me/cards').subscribe(function (data) {
-            _this.cards = data;
-            for (var _i = 0, _a = _this.cards; _i < _a.length; _i++) {
-                var card = _a[_i];
-                _this.cardNumber = _this.cardNumber + 1;
-            }
-            _this.doughnutChartData[0] = _this.cardNumber;
         });
     };
     // events
@@ -1143,7 +1194,6 @@ var VisualComponent = /** @class */ (function () {
     VisualComponent.prototype.ngOnInit = function () {
         return __awaiter(this, void 0, void 0, function () {
             return __generator(this, function (_a) {
-                this.getNumbers();
                 return [2 /*return*/];
             });
         });
@@ -1173,7 +1223,7 @@ var VisualComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  You will be redirected...\n</p>\n"
+module.exports = "<p>\r\n  You will be redirected...\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1286,6 +1336,86 @@ var PublicGuard = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/trello-service/http-error-handler.service.ts":
+/*!**************************************************************!*\
+  !*** ./src/app/trello-service/http-error-handler.service.ts ***!
+  \**************************************************************/
+/*! exports provided: HttpErrorHandler */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HttpErrorHandler", function() { return HttpErrorHandler; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
+/* harmony import */ var _private_message_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../private/message.service */ "./src/app/private/message.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+/** Handles HttpClient errors */
+var HttpErrorHandler = /** @class */ (function () {
+    function HttpErrorHandler(messageService) {
+        var _this = this;
+        this.messageService = messageService;
+        /** Create curried handleError function that already knows the service name */
+        this.createHandleError = function (serviceName) {
+            if (serviceName === void 0) { serviceName = ''; }
+            return function (operation, result) {
+                if (operation === void 0) { operation = 'operation'; }
+                if (result === void 0) { result = {}; }
+                return _this.handleError(serviceName, operation, result);
+            };
+        };
+    }
+    /**
+     * Returns a function that handles Http operation failures.
+     * This error handler lets the app continue to run as if no error occurred.
+     * @param serviceName = name of the data service that attempted the operation
+     * @param operation - name of the operation that failed
+     * @param result - optional value to return as the observable result
+     */
+    HttpErrorHandler.prototype.handleError = function (serviceName, operation, result) {
+        var _this = this;
+        if (serviceName === void 0) { serviceName = ''; }
+        if (operation === void 0) { operation = 'operation'; }
+        if (result === void 0) { result = {}; }
+        return function (error) {
+            // TODO: send the error to remote logging infrastructure
+            console.error(error); // log to console instead
+            var message = (error.error instanceof ErrorEvent) ?
+                error.error.message :
+                "server returned code " + error.status + " with body \"" + error.error + "\"";
+            // TODO: better job of transforming error for user consumption
+            _this.messageService.add(serviceName + ": " + operation + " failed: " + message);
+            // Let the app keep running by returning a safe result.
+            return Object(rxjs__WEBPACK_IMPORTED_MODULE_1__["of"])(result);
+        };
+    };
+    HttpErrorHandler = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_private_message_service__WEBPACK_IMPORTED_MODULE_2__["MessageService"]])
+    ], HttpErrorHandler);
+    return HttpErrorHandler;
+}());
+
+/*
+Copyright 2017-2018 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
+
+
+/***/ }),
+
 /***/ "./src/app/trello-service/set-token/set-token.component.html":
 /*!*******************************************************************!*\
   !*** ./src/app/trello-service/set-token/set-token.component.html ***!
@@ -1293,7 +1423,7 @@ var PublicGuard = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  set-token works!\n</p>\n"
+module.exports = "<p>\r\n  set-token works!\r\n</p>\r\n"
 
 /***/ }),
 
@@ -1447,6 +1577,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TrelloService", function() { return TrelloService; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/internal/operators */ "./node_modules/rxjs/internal/operators/index.js");
+/* harmony import */ var rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _http_error_handler_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../http-error-handler.service */ "./src/app/trello-service/http-error-handler.service.ts");
+/* harmony import */ var _trello_auth_trello_storage_key__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../trello-auth/trello-storage-key */ "./src/app/trello-service/trello-auth/trello-storage-key.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1493,9 +1627,18 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 };
 
 
+
+
+
+var httpOptions = {
+    headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+        'Content-Type': 'application/json',
+    })
+};
 var TrelloService = /** @class */ (function () {
-    function TrelloService(httpClient) {
+    function TrelloService(httpClient, httpErrorHandler) {
         this.httpClient = httpClient;
+        this.handleError = httpErrorHandler.createHandleError('Trello Service');
     }
     TrelloService.prototype.getMe = function () {
         return __awaiter(this, void 0, void 0, function () {
@@ -1504,9 +1647,30 @@ var TrelloService = /** @class */ (function () {
             });
         });
     };
+    /** GET Boards from Trello */
+    TrelloService.prototype.getBoards = function () {
+        return this.httpClient.get('https://api.trello.com/1/members/me/boards')
+            .pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('getBoards')));
+    };
+    TrelloService.prototype.getCardsByListId = function (listId) {
+        return this.httpClient.get('https://api.trello.com/1/lists/' + listId + '/cards')
+            .pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('getCardsByBoardId')));
+    };
+    TrelloService.prototype.getListsByBoardId = function (boardId) {
+        return this.httpClient.get('https://api.trello.com/1/boards/' + boardId + '/lists').pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('getListsByBoardId')));
+    };
+    TrelloService.prototype.getCurrentBoard = function (boardId) {
+        return this.httpClient.get('https://api.trello.com/1/boards/' + boardId).pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('getCurrentBoard')));
+    };
+    TrelloService.prototype.addCardToList = function (list, card) {
+        console.log('trello service addcardToList');
+        httpOptions.headers.append('Authorization', localStorage.getItem(_trello_auth_trello_storage_key__WEBPACK_IMPORTED_MODULE_4__["TRELLO_STORAGE_KEY"]));
+        return this.httpClient.post('https://api.trello.com/1/cards?idList=' + list.id, card, httpOptions)
+            .pipe(Object(rxjs_internal_operators__WEBPACK_IMPORTED_MODULE_2__["catchError"])(this.handleError('addCardToList', card)));
+    };
     TrelloService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _http_error_handler_service__WEBPACK_IMPORTED_MODULE_3__["HttpErrorHandler"]])
     ], TrelloService);
     return TrelloService;
 }());
@@ -1598,7 +1762,7 @@ var TrelloAuthService = /** @class */ (function () {
         console.log(this.apiKey);
         return 'https://trello.com/1/authorize?response_type=token&key=' + this.apiKey +
             '&return_url=' + returnUrl +
-            '&callback_method=fragment&scope=read&expiration=never&name=Angular-TrelloView-App';
+            '&callback_method=fragment&scope=read,write&expiration=never&name=Angular-TrelloView-App';
     };
     /**
      * Logout, guards are responsible to redirect
@@ -1663,12 +1827,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./trello-auth/trello-auth.service */ "./src/app/trello-service/trello-auth/trello-auth.service.ts");
 /* harmony import */ var _trello_api_trello_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./trello-api/trello.service */ "./src/app/trello-service/trello-api/trello.service.ts");
 /* harmony import */ var _trello_service_routing__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./trello-service.routing */ "./src/app/trello-service/trello-service.routing.ts");
+/* harmony import */ var _http_error_handler_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./http-error-handler.service */ "./src/app/trello-service/http-error-handler.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1688,7 +1854,7 @@ var TrelloServiceModule = /** @class */ (function () {
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClientModule"]
             ],
             declarations: [_set_token_set_token_component__WEBPACK_IMPORTED_MODULE_3__["SetTokenComponent"]],
-            providers: [{ provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"], useClass: _trello_api_token_interceptor__WEBPACK_IMPORTED_MODULE_4__["TokenInterceptor"], multi: true }, _trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_5__["TrelloAuthService"], _trello_api_trello_service__WEBPACK_IMPORTED_MODULE_6__["TrelloService"]]
+            providers: [{ provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HTTP_INTERCEPTORS"], useClass: _trello_api_token_interceptor__WEBPACK_IMPORTED_MODULE_4__["TokenInterceptor"], multi: true }, _trello_auth_trello_auth_service__WEBPACK_IMPORTED_MODULE_5__["TrelloAuthService"], _trello_api_trello_service__WEBPACK_IMPORTED_MODULE_6__["TrelloService"], _http_error_handler_service__WEBPACK_IMPORTED_MODULE_8__["HttpErrorHandler"]]
         })
     ], TrelloServiceModule);
     return TrelloServiceModule;
@@ -1793,7 +1959,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_1__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/Toby/Development/Angular/trelloview/src/main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Leon Schelle\IdeaProjects\trelloview\src\main.ts */"./src/main.ts");
 
 
 /***/ })

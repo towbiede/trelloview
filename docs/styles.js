@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/Toby/Development/Angular/trelloview/src/styles.scss */"./src/styles.scss");
-module.exports = __webpack_require__(/*! /Users/Toby/Development/Angular/trelloview/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! C:\Users\Leon Schelle\IdeaProjects\trelloview\src\styles.scss */"./src/styles.scss");
+module.exports = __webpack_require__(/*! C:\Users\Leon Schelle\IdeaProjects\trelloview\node_modules\bootstrap\dist\css\bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 
 /***/ })
