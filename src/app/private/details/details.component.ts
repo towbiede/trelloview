@@ -11,17 +11,6 @@ import {TrelloAuthService} from '../../trello-service/trello-auth/trello-auth.se
 })
 export class DetailsComponent implements OnInit {
 
-  constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {}
-
-  async ngOnInit() {
-  const user  = await this.trelloService.getMe();
-  console.log('User:', user);
-  this.getBoards();
-
-  }
-
-
-
   bId: string;
   lId: string;
   chId: string;
@@ -34,10 +23,16 @@ export class DetailsComponent implements OnInit {
   labels: any;
   checklists: any;
   checkItems: any;
-  avatarImg : string;
+  avatarImg: string;
 
+  constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {}
 
+  async ngOnInit() {
+  const user  = await this.trelloService.getMe();
+  console.log('User:', user);
+  this.getBoards();
 
+  }
 
   getBoards() {
     return this.http.get('https://api.trello.com/1/members/me/boards').subscribe(data => {
@@ -70,7 +65,6 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-
   getChecklistByCardId(cardId: string) {
     this.cardId = cardId;
     const getChecklistsUrl = 'https://api.trello.com/1/cards/' + this.cardId + '/checklists'   ;
@@ -89,7 +83,6 @@ export class DetailsComponent implements OnInit {
     });
   }
 
-
   getMembersByBoardId(boardId: string) {
     this.bId = boardId;
     const getMembersUrl = 'https://api.trello.com/1/boards/' + this.bId + '/members' ;
@@ -99,9 +92,6 @@ export class DetailsComponent implements OnInit {
 
     });
   }
-
-
-
 
   logout() {
     this.trelloAuthService.logout();
