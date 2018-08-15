@@ -2,24 +2,22 @@ import { Component, OnInit } from '@angular/core';
 import {TrelloService} from '../../trello-service/trello-api/trello.service';
 import {HttpClient} from '@angular/common/http';
 import {TrelloAuthService} from '../../trello-service/trello-auth/trello-auth.service';
-import {forEach} from "@angular/router/src/utils/collection";
 
 @Component({
   selector: 'app-visual',
   templateUrl: './visual.component.html',
   styleUrls: ['./visual.component.scss']
 })
+
 export class VisualComponent implements OnInit {
 
   data: any;
   boards: any ;
   lists: any;
   cards: any;
-  boardNumber: number = 0;
-  listNumber: number = 0;
-  cardNumber: number = 0;
-
-
+  boardNumber = 0;
+  listNumber = 0;
+  cardNumber = 0;
 
 
   constructor(private http: HttpClient, private trelloAuthService: TrelloAuthService, private trelloService: TrelloService) {  }
@@ -29,35 +27,35 @@ export class VisualComponent implements OnInit {
    * This is just a TestChart
    */
 
-    // DoughnutChart
+  /** DoughnutChart **/
   public doughnutChartLabels: string[] = ['Cards', 'Lists', 'Boards'];
-  public doughnutChartData: number[] = [1,1,1];
-  public doughnutChartType: string = 'doughnut';
+  public doughnutChartData: number[] = [1, 1, 1];
+  public doughnutChartType = 'doughnut';
 
 
   public getNumbers() {
 
-    //get all boards
+    /** get all boards **/
     this.http.get('https://api.trello.com/1/members/me/boards').subscribe(data => {
       this.boards = data;
 
-      //iterate to count the boards and set ChartData to the amount of boards, and get every list in every single board
-      for(let board of this.boards){
-        this.boardNumber = this.boardNumber +1;
+      /** iterate to count the boards and set ChartData to the amount of boards, and get every list in every single board **/
+      for (const board of this.boards){
+        this.boardNumber = this.boardNumber + 1;
 
         this.http.get('https://api.trello.com/1/boards/' + board.id + '/lists').subscribe(data => {
           this.lists = data;
 
-               // iterate lists
-          for(let list of this.lists){
+          /** iterate lists **/
+          for (const list of this.lists){
             this.listNumber = this.listNumber + 1;
 
 
             this.http.get('https://api.trello.com/1/lists/' + list.id + '/cards').subscribe(data => {
               this.cards = data;
 
-               // iterate cards
-              for(let card of this.cards){
+              /** iterate cards **/
+              for (const card of this.cards){
                 this.cardNumber = this.cardNumber + 1;
               }
 
@@ -76,21 +74,18 @@ export class VisualComponent implements OnInit {
 
     });
 
-
-
-
     this.http.get('https://api.trello.com/1/members/me/lists').subscribe(data => {
       this.lists = data;
-      for(let list of this.lists){
-        this.listNumber = this.listNumber+1;
+      for(const list of this.lists){
+        this.listNumber = this.listNumber + 1;
       }
       this.doughnutChartData[1] = this.listNumber;
     });
 
     this.http.get('https://api.trello.com/1/members/me/cards').subscribe(data => {
       this.cards = data;
-      for(let card of this.cards){
-        this.cardNumber = this.cardNumber+1;
+      for(const card of this.cards){
+        this.cardNumber = this.cardNumber + 1;
       }
       this.doughnutChartData[0] = this.cardNumber;
     });
@@ -109,8 +104,7 @@ export class VisualComponent implements OnInit {
 
 
   async ngOnInit() {
-this.getNumbers();
-
+    this.getNumbers();
   }
 
   logout() {
